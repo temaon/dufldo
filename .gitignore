@@ -29,4 +29,5 @@
 /.sass-cache
 /public/system
 /public/assets
+/public/ckeditor_assets
 railways.cache
