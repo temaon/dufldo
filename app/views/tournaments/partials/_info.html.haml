@@ -1,0 +1,16 @@
+.entry-blog-meta.col-sm-3
+  %ul
+    %li.category
+      = link_to tournament.category.name, tournament.category.decorate.slug_path
+    - if tournament.try(:user).present?
+      %li.author-by
+        By
+        %span.author
+          -#%a{:href => "http://demo.themeum.com/wordpress/wpsoccer/author/admin/", :rel => "author", :title => "Posts by admin"}
+          = link_to tournament.user.username, '#'
+    %li.publish-date
+      %time.entry-date
+        = tournament.formatted_date
+    %li.comments-link
+      %a{:href => "http://demo.themeum.com/wordpress/wpsoccer/river-stumble-as-cruzeiro-but-fly-high-in-table-proving-wrong-dem/#respond"}
+        %span.leave-reply No comment

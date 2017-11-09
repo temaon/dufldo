@@ -1,0 +1,21 @@
+- if game.home_team(true).present? && game.guest_team(true).present?
+  .themeum-recent-result-item-inner
+    .clubnames
+      %span.text-left
+        = link_to "#{game.home_team.name} - #{game.guest_team.name}", game.slug_path
+      %span.pull-right
+        = game.formatted_date(:short)
+    .clearfix
+    .themeum-recent-result-item
+      = link_to game.home_team.slug_path, class: %i(text-left themeum-recent-result-list), data: {toggle: :tooltip}, title: game.home_team.name do
+        = image_tag game.home_team.logo(:thumb), alt: game.home_team.name, class: %i(img-responsive)
+        = game.home_team.short_name
+      .text-center.themeum-recent-result-list
+        %span.goal
+          = game.home_team_result.to_i
+        != '&nbsp;-'
+        %span.goal
+          = game.guest_team_result.to_i
+      = link_to game.guest_team.slug_path, class: %i(text-center themeum-recent-result-list), data: {toggle: :tooltip}, title: game.guest_team.name do
+        = image_tag game.guest_team.logo(:thumb), alt: game.guest_team.name, class: %i(img-responsive)
+        = game.guest_team.short_name

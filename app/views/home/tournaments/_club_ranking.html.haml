@@ -1,0 +1,11 @@
+%li.clearfix
+  %span
+    = result.place
+    - if result.team_decorate.present?
+      = image_tag result.team_decorate.logo, alt: result.team_decorate.name, class: %i(img-responsive)
+      = result.team_decorate.name
+  %span.pull-right{style: 'margin: 0 10px;'}
+    = result.score
+  %span.pull-right
+    = result.count_games
+

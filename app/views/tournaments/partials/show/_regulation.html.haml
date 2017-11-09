@@ -1,0 +1,19 @@
+%tr
+  %td
+    %i.fa.fa-file-text.ibox-content
+    = regulation.title
+  %td
+    = button_tag '#', class: %i(btn btn-primary), data: {turbolinks: false, toggle: :modal, target: "#content_#{regulation_counter}"} do
+      = 'Посмотреть'
+    .modal.fade{role: :dialog, tabindex: -1, id: "content_#{regulation_counter}"}
+      .modal-dialog{role: :document}
+        .modal-content
+          .modal-header
+            %button.close{aria: {label: 'Закрыть'}, data: {dismiss: :modal}, type: :button}
+              %span{aria: {hidden: true}} ×
+            %h4#myModalLabel.modal-title
+              = regulation.title
+          .modal-body
+            != regulation.description
+          .modal-footer
+            %button.btn.btn-default{data: {dismiss: :modal}, type: :button} Закрыть

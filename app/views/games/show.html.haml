@@ -1,0 +1,768 @@
+%section#main
+  .match-banner.sub-title{style: "background-image:url(http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/banner2.jpg);background-size: cover;background-position: 50% 50%;padding:100px 0 50px"}
+    .container
+      .text-center
+        %h2.match-detail-league-title
+          %div
+            = "#{@object.title} #{@object.formatted_date}"
+      .row
+        - if @object.home_team(true).present? && @object.guest_team(true).present?
+          .col-xs-12.col-sm-5.matech-team-left
+            .matech-team.pull-right
+              .icon-left
+                = image_tag @object.home_team.logo(:thumb), alt: @object.home_team.name, width: 61
+              .title
+                %h4
+                  = @object.home_team.name
+            .clearfix
+          .col-xs-12.col-sm-2.score
+            %span.goal
+              = "#{@object.home_team_result.to_i} : #{@object.guest_team_result.to_i}"
+          .col-xs-12.col-sm-5.matech-team-right
+            .matech-team.pull-left
+              .title
+                %h4
+                  = @object.guest_team.name
+              .icon-right
+                = image_tag @object.guest_team.logo(:thumb), alt: @object.guest_team.name, width: 61
+            .clearfix
+      .goal-timeline.hidden-xs
+        - if @object.first_time.present?
+          %span.timeline-titme 00"
+          %ul.goal-timeline1
+            %li.team1.goal{:style => "left:26%"}
+              %span.time Hansel Patel 12"
+          %span.timeline-titme
+            = "#{@object.first_time.length} \""
+        - if @object.second_time.present?
+          %ul.goal-timeline2
+            %li.team1.goal{:style => "left:77%"}
+              %span.time Tonry Pulser 70"
+          %span.timeline-titme
+            = "#{@object.second_time.length} \""
+        - if @object.extra_time.present?
+          .extra-time-goal
+            %span.timeline-titme +
+            %ul.goal-timeline2
+              %li.team1.goal{:style => "left:50%"}
+                %span.time Hansy Mollar 100"
+              %li.team1.goal{:style => "left:75%"}
+                %span.time Luyes Figery 105"
+            %span.timeline-titme
+              = "#{@object.extra_time.length} \""
+
+  -#/ /#result-details
+  -#/ container
+  -#/ match-banner
+  -#.match-details
+  -#  .container
+  -#    .match-details-inner
+  -#      .match-details-tab{:role => "tabpanel"}
+  -#        / Nav tabs
+  -#        %ul.nav.nav-tabs.match-details-tab-nav{:role => "tablist"}
+  -#          %li{:role => "presentation"}
+  -#            %a{"aria-controls" => "match-stats", "aria-expanded" => "false", "data-toggle" => "tab", :href => "#match-stats", :role => "tab"} Match Stats
+  -#          %li{:role => "presentation"}
+  -#            %a{"aria-controls" => "timeline", "aria-expanded" => "false", "data-toggle" => "tab", :href => "#timeline", :role => "tab"} Timeline
+  -#          %li{:role => "presentation"}
+  -#            %a{"aria-controls" => "team", "aria-expanded" => "false", "data-toggle" => "tab", :href => "#team", :role => "tab"} Team
+  -#          %li{:role => "presentation"}
+  -#            %a{"aria-controls" => "substitutes", "aria-expanded" => "false", "data-toggle" => "tab", :href => "#substitutes", :role => "tab"} Substitutes
+  -#          %li.active{:role => "presentation"}
+  -#            %a{"aria-controls" => "match_comments", "aria-expanded" => "true", "data-toggle" => "tab", :href => "#match_comments", :role => "tab"} Comments
+  -#        / Tab panes
+  -#        .tab-content.match-details-tab-content
+  -#          #match-stats.tab-pane.fade{:role => "tabpanel"}
+  -#            .match-status
+  -#              .row
+  -#                .col-xs-12.col-sm-5
+  -#                  .matech-details-team.media
+  -#                    .pull-left
+  -#                      %img{:alt => "Uruguay", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/club_logo3.png", :width => "61"}/
+  -#                    .media-body
+  -#                      %h4 Uruguay
+  -#                      %span
+  -#                        5-3-2
+  -#                .col-xs-12.col-sm-2.vs
+  -#                  %span VS
+  -#                .col-xs-12.col-sm-5
+  -#                  .matech-details-team.media.text-right
+  -#                    .pull-right
+  -#                      %img{:alt => "Argentina", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/club_logo6.png", :width => "61"}/
+  -#                    .media-body
+  -#                      %h4 Argentina
+  -#                      %span
+  -#                        4-4-2
+  -#              / row
+  -#              .row
+  -#                .col-xs-12
+  -#                  .match-status-info.clearfix
+  -#                    .match-goal-info.text-center.clearfix
+  -#                      .text-center.clearfix
+  -#                        %ul.pull-left.text-left
+  -#                          %li Hansel Patel 12'
+  -#                        %span.status Goal
+  -#                        %ul.pull-right.text-right
+  -#                          %li Tonry Pulser 70'
+  -#                    .match-status-list.clearfix
+  -#                      %ul
+  -#                        %li.clearfix.text-center
+  -#                          %span.count.pull-left 2
+  -#                          %span.status Off Side
+  -#                          %span.count.pull-right 3
+  -#                        %li.clearfix.text-center
+  -#                          %span.count.pull-left 3
+  -#                          %span.status Panalty
+  -#                          %span.count.pull-right 4
+  -#                        %li.clearfix.text-center
+  -#                          %span.count.pull-left 10
+  -#                          %span.status Throw
+  -#                          %span.count.pull-right 2
+  -#                        %li.clearfix.text-center
+  -#                          %span.count.pull-left 4
+  -#                          %span.status Handball
+  -#                          %span.count.pull-right 3
+  -#                        %li.clearfix.text-center
+  -#                          %span.count.pull-left 3
+  -#                          %span.status Goal
+  -#                          %span.count.pull-right 4
+  -#                        %li.clearfix.text-center
+  -#                          %span.count.pull-left 30
+  -#                          %span.status Double Yellow
+  -#                          %span.count.pull-right 10
+  -#          / match-status-info
+  -#          / col-xs-12
+  -#          / row
+  -#          / match-status
+  -#          / match-status
+  -#          #timeline.tab-pane.fade{:role => "tabpanel"}
+  -#            .match-timeline
+  -#              .row
+  -#                .match-timeline-inner.clearfix
+  -#                  .col-xs-3.col-sm-2.time
+  -#                    10
+  -#                    %sub min
+  -#                  .col-xs-6.col-sm-9.status
+  -#                    Yellow Card
+  -#                    %span Robin Boury
+  -#                  .col-xs-3.col-sm-1.match-status-icon.yellow-card
+  -#              .row
+  -#                .match-timeline-inner.clearfix
+  -#                  .col-xs-3.col-sm-2.time
+  -#                    20
+  -#                    %sub min
+  -#                  .col-xs-6.col-sm-9.status
+  -#                    Off Side
+  -#                    %span Roben Crusery
+  -#                  .col-xs-3.col-sm-1.match-status-icon.off-side
+  -#              .row
+  -#                .match-timeline-inner.clearfix
+  -#                  .col-xs-3.col-sm-2.time
+  -#                    33
+  -#                    %sub min
+  -#                  .col-xs-6.col-sm-9.status
+  -#                    Extra Time 1
+  -#                    %span Luyes Figery
+  -#                  .col-xs-3.col-sm-1.match-status-icon.extra-time-1
+  -#              .row
+  -#                .match-timeline-inner.clearfix
+  -#                  .col-xs-3.col-sm-2.time
+  -#                    44
+  -#                    %sub min
+  -#                  .col-xs-6.col-sm-9.status
+  -#                    Throw
+  -#                    %span Robin Boury
+  -#                  .col-xs-3.col-sm-1.match-status-icon.throw
+  -#              .row
+  -#                .match-timeline-inner.clearfix
+  -#                  .col-xs-3.col-sm-2.time
+  -#                    45
+  -#                    %sub min
+  -#                  .col-xs-6.col-sm-9.status
+  -#                    Handball
+  -#                    %span Luyes Figery
+  -#                  .col-xs-3.col-sm-1.match-status-icon.handball
+  -#              .row
+  -#                .match-timeline-inner.clearfix
+  -#                  .col-xs-3.col-sm-2.time
+  -#                    60
+  -#                    %sub min
+  -#                  .col-xs-6.col-sm-9.status
+  -#                    Off Side
+  -#                    %span Hansy Mollar
+  -#                  .col-xs-3.col-sm-1.match-status-icon.off-side
+  -#              .row
+  -#                .match-timeline-inner.clearfix
+  -#                  .col-xs-3.col-sm-2.time
+  -#                    80
+  -#                    %sub min
+  -#                  .col-xs-6.col-sm-9.status
+  -#                    Free Kick
+  -#                    %span Robin Boury
+  -#                  .col-xs-3.col-sm-1.match-status-icon.free-kick
+  -#          / timeline
+  -#          #team.tab-pane.fade{:role => "tabpanel"}
+  -#            .match-team
+  -#              .row
+  -#                .col-xs-12.col-sm-6
+  -#                  .matech-details-team.media
+  -#                    .pull-left
+  -#                      %img{:alt => "Uruguay", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/club_logo3.png", :width => "61"}/
+  -#                    .media-body
+  -#                      %h4 Uruguay
+  -#                      %span
+  -#                        5-3-2
+  -#                .col-xs-12.col-sm-6
+  -#                  .matech-details-team.media.text-right
+  -#                    .pull-right
+  -#                      %img{:alt => "Argentina", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/club_logo6.png", :width => "61"}/
+  -#                    .media-body
+  -#                      %h4 Argentina
+  -#                      %span
+  -#                        4-4-2
+  -#              / row
+  -#              .match-teams.clearfix
+  -#                .row.match-team-inner
+  -#                  .col-xs-12.col-sm-6
+  -#                    .team-overlay.clearfix
+  -#                      %img.left{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player3-150x150.jpg", :width => "40"}/
+  -#                      %h4 Hansy Mollar
+  -#                      .player-overlay
+  -#                        .team-overlay-inner
+  -#                          .player-image-wrap
+  -#                            %img{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player3-270x150.jpg"}/
+  -#                          .player-name-inner
+  -#                            %h4 Hansy Mollar
+  -#                            %span Sweeper
+  -#                            .more
+  -#                              %a{:href => "http://demo.themeum.com/wordpress/wpsoccer/player/hansy-mollar/"}
+  -#                                %i.fa.fa-long-arrow-right
+  -#                          %ul
+  -#                            %li
+  -#                              %span.payer-info Weight:
+  -#                              %span 45kg
+  -#                            %li
+  -#                              %span.payer-info Height:
+  -#                              %span 32kg
+  -#                            %li
+  -#                              %span.payer-info Nationality:
+  -#                              %span Spain
+  -#                            %li
+  -#                              %span.payer-info Place of Birth:
+  -#                              %span Warsaw Poland
+  -#                            %li
+  -#                              %span.payer-info Date of Birth:
+  -#                              %span March 5th, 1989
+  -#                  .col-xs-12.col-sm-6.text-right
+  -#                    .team-overlay.clearfix
+  -#                      %h4 Tonry Pulser
+  -#                      %img.right{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player1-150x150.jpg", :width => "40"}/
+  -#                      .player-overlay.player-overlay-right
+  -#                        .team-overlay-inner
+  -#                          .player-image-wrap
+  -#                            %img{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player1-270x150.jpg"}/
+  -#                          .player-name-inner
+  -#                            %h4 Tonry Pulser
+  -#                            %span Attacking Midfielder
+  -#                            .more
+  -#                              %a{:href => "http://demo.themeum.com/wordpress/wpsoccer/player/tonry-pulser/"}
+  -#                                %i.fa.fa-long-arrow-right
+  -#                          %ul
+  -#                            %li
+  -#                              %span.payer-info Full Name:
+  -#                              %span Robert Gomez Al Horford
+  -#                            %li
+  -#                              %span.payer-info Date of Birth:
+  -#                              %span March 5th, 1989
+  -#                            %li
+  -#                              %span.payer-info Place of Birth:
+  -#                              %span Warsaw Poland
+  -#                            %li
+  -#                              %span.payer-info Height:
+  -#                              %span 179 cm
+  -#                            %li
+  -#                              %span.payer-info Weight:
+  -#                              %span 68 kg
+  -#                .row.match-team-inner
+  -#                  .col-xs-12.col-sm-6
+  -#                    .team-overlay.clearfix
+  -#                      %img.left{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player5-150x150.jpg", :width => "40"}/
+  -#                      %h4 Hansel Patel
+  -#                      .player-overlay
+  -#                        .team-overlay-inner
+  -#                          .player-image-wrap
+  -#                            %img{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player5-270x150.jpg"}/
+  -#                          .player-name-inner
+  -#                            %h4 Hansel Patel
+  -#                            %span Sweeper
+  -#                            .more
+  -#                              %a{:href => "http://demo.themeum.com/wordpress/wpsoccer/player/hansel-patel/"}
+  -#                                %i.fa.fa-long-arrow-right
+  -#                          %ul
+  -#                            %li
+  -#                              %span.payer-info Weight:
+  -#                              %span 45kg
+  -#                            %li
+  -#                              %span.payer-info Height:
+  -#                              %span 32kg
+  -#                            %li
+  -#                              %span.payer-info Nationality:
+  -#                              %span Spain
+  -#                            %li
+  -#                              %span.payer-info Place of Birth:
+  -#                              %span Warsaw Poland
+  -#                            %li
+  -#                              %span.payer-info Date of Birth:
+  -#                              %span March 5th, 1989
+  -#                  .col-xs-12.col-sm-6.text-right
+  -#                    .team-overlay.clearfix
+  -#                      %h4 Hansy Mollar
+  -#                      %img.right{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player3-150x150.jpg", :width => "40"}/
+  -#                      .player-overlay.player-overlay-right
+  -#                        .team-overlay-inner
+  -#                          .player-image-wrap
+  -#                            %img{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player3-270x150.jpg"}/
+  -#                          .player-name-inner
+  -#                            %h4 Hansy Mollar
+  -#                            %span Sweeper
+  -#                            .more
+  -#                              %a{:href => "http://demo.themeum.com/wordpress/wpsoccer/player/hansy-mollar/"}
+  -#                                %i.fa.fa-long-arrow-right
+  -#                          %ul
+  -#                            %li
+  -#                              %span.payer-info Weight:
+  -#                              %span 45kg
+  -#                            %li
+  -#                              %span.payer-info Height:
+  -#                              %span 32kg
+  -#                            %li
+  -#                              %span.payer-info Nationality:
+  -#                              %span Spain
+  -#                            %li
+  -#                              %span.payer-info Place of Birth:
+  -#                              %span Warsaw Poland
+  -#                            %li
+  -#                              %span.payer-info Date of Birth:
+  -#                              %span March 5th, 1989
+  -#                .row.match-team-inner
+  -#                  .col-xs-12.col-sm-6
+  -#                    .team-overlay.clearfix
+  -#                      %img.left{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player6-150x150.jpg", :width => "40"}/
+  -#                      %h4 Roben Crusery
+  -#                      .player-overlay
+  -#                        .team-overlay-inner
+  -#                          .player-image-wrap
+  -#                            %img{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player6-270x150.jpg"}/
+  -#                          .player-name-inner
+  -#                            %h4 Roben Crusery
+  -#                            %span Right Back
+  -#                            .more
+  -#                              %a{:href => "http://demo.themeum.com/wordpress/wpsoccer/player/roben-crusery/"}
+  -#                                %i.fa.fa-long-arrow-right
+  -#                          %ul
+  -#                            %li
+  -#                              %span.payer-info Weight:
+  -#                              %span 45kg
+  -#                            %li
+  -#                              %span.payer-info Height:
+  -#                              %span 32kg
+  -#                            %li
+  -#                              %span.payer-info Nationality:
+  -#                              %span Spain
+  -#                            %li
+  -#                              %span.payer-info Place of Birth:
+  -#                              %span Warsaw Poland
+  -#                            %li
+  -#                              %span.payer-info Date of Birth:
+  -#                              %span March 5th, 1989
+  -#                  .col-xs-12.col-sm-6.text-right
+  -#                    .team-overlay.clearfix
+  -#                      %h4 Hansel Patel
+  -#                      %img.right{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player4-150x150.jpg", :width => "40"}/
+  -#                      .player-overlay.player-overlay-right
+  -#                        .team-overlay-inner
+  -#                          .player-image-wrap
+  -#                            %img{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player4-270x150.jpg"}/
+  -#                          .player-name-inner
+  -#                            %h4 Hansel Patel
+  -#                            %span Sweeper
+  -#                            .more
+  -#                              %a{:href => "http://demo.themeum.com/wordpress/wpsoccer/player/robin-boury/"}
+  -#                                %i.fa.fa-long-arrow-right
+  -#                          %ul
+  -#                            %li
+  -#                              %span.payer-info Weight:
+  -#                              %span 45kg
+  -#                            %li
+  -#                              %span.payer-info Height:
+  -#                              %span 32kg
+  -#                            %li
+  -#                              %span.payer-info Nationality:
+  -#                              %span Spain
+  -#                            %li
+  -#                              %span.payer-info Place of Birth:
+  -#                              %span Warsaw Poland
+  -#                            %li
+  -#                              %span.payer-info Date of Birth:
+  -#                              %span March 5th, 1989
+  -#                .row.match-team-inner
+  -#                  .col-xs-12.col-sm-6
+  -#                    .team-overlay.clearfix
+  -#                      %img.left{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player7-150x150.jpg", :width => "40"}/
+  -#                      %h4 Luyes Figery
+  -#                      .player-overlay
+  -#                        .team-overlay-inner
+  -#                          .player-image-wrap
+  -#                            %img{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player7-270x150.jpg"}/
+  -#                          .player-name-inner
+  -#                            %h4 Luyes Figery
+  -#                            %span Right Wing Back
+  -#                            .more
+  -#                              %a{:href => "http://demo.themeum.com/wordpress/wpsoccer/player/luyes-figery/"}
+  -#                                %i.fa.fa-long-arrow-right
+  -#                          %ul
+  -#                            %li
+  -#                              %span.payer-info Weight:
+  -#                              %span 45kg
+  -#                            %li
+  -#                              %span.payer-info Height:
+  -#                              %span 32kg
+  -#                            %li
+  -#                              %span.payer-info Nationality:
+  -#                              %span Spain
+  -#                            %li
+  -#                              %span.payer-info Place of Birth:
+  -#                              %span Warsaw Poland
+  -#                            %li
+  -#                              %span.payer-info Date of Birth:
+  -#                              %span March 5th, 1989
+  -#                  .col-xs-12.col-sm-6.text-right
+  -#                    .team-overlay.clearfix
+  -#                      %h4 Hansel Patel
+  -#                      %img.right{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player5-150x150.jpg", :width => "40"}/
+  -#                      .player-overlay.player-overlay-right
+  -#                        .team-overlay-inner
+  -#                          .player-image-wrap
+  -#                            %img{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player5-270x150.jpg"}/
+  -#                          .player-name-inner
+  -#                            %h4 Hansel Patel
+  -#                            %span Sweeper
+  -#                            .more
+  -#                              %a{:href => "http://demo.themeum.com/wordpress/wpsoccer/player/hansel-patel/"}
+  -#                                %i.fa.fa-long-arrow-right
+  -#                          %ul
+  -#                            %li
+  -#                              %span.payer-info Weight:
+  -#                              %span 45kg
+  -#                            %li
+  -#                              %span.payer-info Height:
+  -#                              %span 32kg
+  -#                            %li
+  -#                              %span.payer-info Nationality:
+  -#                              %span Spain
+  -#                            %li
+  -#                              %span.payer-info Place of Birth:
+  -#                              %span Warsaw Poland
+  -#                            %li
+  -#                              %span.payer-info Date of Birth:
+  -#                              %span March 5th, 1989
+  -#                .row.match-team-inner
+  -#                  .col-xs-12.col-sm-6
+  -#                    .team-overlay.clearfix
+  -#                      %img.left{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player8-150x150.jpg", :width => "40"}/
+  -#                      %h4 Jony Koram
+  -#                      .player-overlay
+  -#                        .team-overlay-inner
+  -#                          .player-image-wrap
+  -#                            %img{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player8-270x150.jpg"}/
+  -#                          .player-name-inner
+  -#                            %h4 Jony Koram
+  -#                            %span Center Back
+  -#                            .more
+  -#                              %a{:href => "http://demo.themeum.com/wordpress/wpsoccer/player/jony-koram/"}
+  -#                                %i.fa.fa-long-arrow-right
+  -#                          %ul
+  -#                            %li
+  -#                              %span.payer-info Weight:
+  -#                              %span 45kg
+  -#                            %li
+  -#                              %span.payer-info Height:
+  -#                              %span 32kg
+  -#                            %li
+  -#                              %span.payer-info Nationality:
+  -#                              %span Spain
+  -#                            %li
+  -#                              %span.payer-info Place of Birth:
+  -#                              %span Warsaw Poland
+  -#                            %li
+  -#                              %span.payer-info Date of Birth:
+  -#                              %span March 5th, 1989
+  -#                  .col-xs-12.col-sm-6.text-right
+  -#                    .team-overlay.clearfix
+  -#                      %h4 Roben Crusery
+  -#                      %img.right{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player6-150x150.jpg", :width => "40"}/
+  -#                      .player-overlay.player-overlay-right
+  -#                        .team-overlay-inner
+  -#                          .player-image-wrap
+  -#                            %img{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player6-270x150.jpg"}/
+  -#                          .player-name-inner
+  -#                            %h4 Roben Crusery
+  -#                            %span Right Back
+  -#                            .more
+  -#                              %a{:href => "http://demo.themeum.com/wordpress/wpsoccer/player/roben-crusery/"}
+  -#                                %i.fa.fa-long-arrow-right
+  -#                          %ul
+  -#                            %li
+  -#                              %span.payer-info Weight:
+  -#                              %span 45kg
+  -#                            %li
+  -#                              %span.payer-info Height:
+  -#                              %span 32kg
+  -#                            %li
+  -#                              %span.payer-info Nationality:
+  -#                              %span Spain
+  -#                            %li
+  -#                              %span.payer-info Place of Birth:
+  -#                              %span Warsaw Poland
+  -#                            %li
+  -#                              %span.payer-info Date of Birth:
+  -#                              %span March 5th, 1989
+  -#                .row.match-team-inner
+  -#                  .col-xs-12.col-sm-6
+  -#                    .team-overlay.clearfix
+  -#                      %img.left{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player11-150x150.jpg", :width => "40"}/
+  -#                      %h4 Michel William
+  -#                      .player-overlay
+  -#                        .team-overlay-inner
+  -#                          .player-image-wrap
+  -#                            %img{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player11-270x150.jpg"}/
+  -#                          .player-name-inner
+  -#                            %h4 Michel William
+  -#                            %span Center Forward
+  -#                            .more
+  -#                              %a{:href => "http://demo.themeum.com/wordpress/wpsoccer/player/michel-william/"}
+  -#                                %i.fa.fa-long-arrow-right
+  -#                          %ul
+  -#                            %li
+  -#                              %span.payer-info Full Name:
+  -#                              %span Robert Gomez Al Horford
+  -#                            %li
+  -#                              %span.payer-info Date of Birth:
+  -#                              %span March 5th, 1989
+  -#                            %li
+  -#                              %span.payer-info Place of Birth:
+  -#                              %span Warsaw Poland
+  -#                            %li
+  -#                              %span.payer-info Height:
+  -#                              %span 179 cm
+  -#                            %li
+  -#                              %span.payer-info Weight:
+  -#                              %span 68 kg
+  -#                  .col-xs-12.col-sm-6.text-right
+  -#                    .team-overlay.clearfix
+  -#                      %h4 Michel William
+  -#                      %img.right{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player11-150x150.jpg", :width => "40"}/
+  -#                      .player-overlay.player-overlay-right
+  -#                        .team-overlay-inner
+  -#                          .player-image-wrap
+  -#                            %img{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player11-270x150.jpg"}/
+  -#                          .player-name-inner
+  -#                            %h4 Michel William
+  -#                            %span Center Forward
+  -#                            .more
+  -#                              %a{:href => "http://demo.themeum.com/wordpress/wpsoccer/player/michel-william/"}
+  -#                                %i.fa.fa-long-arrow-right
+  -#                          %ul
+  -#                            %li
+  -#                              %span.payer-info Full Name:
+  -#                              %span Robert Gomez Al Horford
+  -#                            %li
+  -#                              %span.payer-info Date of Birth:
+  -#                              %span March 5th, 1989
+  -#                            %li
+  -#                              %span.payer-info Place of Birth:
+  -#                              %span Warsaw Poland
+  -#                            %li
+  -#                              %span.payer-info Height:
+  -#                              %span 179 cm
+  -#                            %li
+  -#                              %span.payer-info Weight:
+  -#                              %span 68 kg
+  -#                .row.match-team-inner
+  -#                  .col-xs-12.col-sm-6
+  -#                    .team-overlay.clearfix
+  -#                      %img.left{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player10-150x150.jpg", :width => "40"}/
+  -#                      %h4 James Holding
+  -#                      .player-overlay
+  -#                        .team-overlay-inner
+  -#                          .player-image-wrap
+  -#                            %img{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player10-270x150.jpg"}/
+  -#                          .player-name-inner
+  -#                            %h4 James Holding
+  -#                            %span Left Wing
+  -#                            .more
+  -#                              %a{:href => "http://demo.themeum.com/wordpress/wpsoccer/player/james-holding/"}
+  -#                                %i.fa.fa-long-arrow-right
+  -#                          %ul
+  -#                            %li
+  -#                              %span.payer-info Full Name:
+  -#                              %span Robert Gomez Al Horford
+  -#                            %li
+  -#                              %span.payer-info Date of Birth:
+  -#                              %span March 5th, 1989
+  -#                            %li
+  -#                              %span.payer-info Place of Birth:
+  -#                              %span Warsaw Poland
+  -#                            %li
+  -#                              %span.payer-info Height:
+  -#                              %span 179 cm
+  -#                            %li
+  -#                              %span.payer-info Weight:
+  -#                              %span 68 kg
+  -#                  .col-xs-12.col-sm-6.text-right
+  -#                    .team-overlay.clearfix
+  -#                      %h4 James Holding
+  -#                      %img.right{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player10-150x150.jpg", :width => "40"}/
+  -#                      .player-overlay.player-overlay-right
+  -#                        .team-overlay-inner
+  -#                          .player-image-wrap
+  -#                            %img{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player10-270x150.jpg"}/
+  -#                          .player-name-inner
+  -#                            %h4 James Holding
+  -#                            %span Left Wing
+  -#                            .more
+  -#                              %a{:href => "http://demo.themeum.com/wordpress/wpsoccer/player/james-holding/"}
+  -#                                %i.fa.fa-long-arrow-right
+  -#                          %ul
+  -#                            %li
+  -#                              %span.payer-info Full Name:
+  -#                              %span Robert Gomez Al Horford
+  -#                            %li
+  -#                              %span.payer-info Date of Birth:
+  -#                              %span March 5th, 1989
+  -#                            %li
+  -#                              %span.payer-info Place of Birth:
+  -#                              %span Warsaw Poland
+  -#                            %li
+  -#                              %span.payer-info Height:
+  -#                              %span 179 cm
+  -#                            %li
+  -#                              %span.payer-info Weight:
+  -#                              %span 68 kg
+  -#                .row.match-team-inner
+  -#                  .col-xs-12.col-sm-6
+  -#                    .team-overlay.clearfix
+  -#                      %img.left{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player9-150x150.jpg", :width => "40"}/
+  -#                      %h4 Robert Al Horford
+  -#                      .player-overlay
+  -#                        .team-overlay-inner
+  -#                          .player-image-wrap
+  -#                            %img{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player9-270x150.jpg"}/
+  -#                          .player-name-inner
+  -#                            %h4 Robert Al Horford
+  -#                            %span Goalkeeper
+  -#                            .more
+  -#                              %a{:href => "http://demo.themeum.com/wordpress/wpsoccer/player/robert-horford/"}
+  -#                                %i.fa.fa-long-arrow-right
+  -#                          %ul
+  -#                            %li
+  -#                              %span.payer-info Weight:
+  -#                              %span 45kg
+  -#                            %li
+  -#                              %span.payer-info Height:
+  -#                              %span 32kg
+  -#                            %li
+  -#                              %span.payer-info Nationality:
+  -#                              %span Spain
+  -#                            %li
+  -#                              %span.payer-info Place of Birth:
+  -#                              %span Warsaw Poland
+  -#                            %li
+  -#                              %span.payer-info Date of Birth:
+  -#                              %span March 5th, 1989
+  -#                  .col-xs-12.col-sm-6.text-right
+  -#                    .team-overlay.clearfix
+  -#                      %h4 Robert Al Horford
+  -#                      %img.right{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player9-150x150.jpg", :width => "40"}/
+  -#                      .player-overlay.player-overlay-right
+  -#                        .team-overlay-inner
+  -#                          .player-image-wrap
+  -#                            %img{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/player9-270x150.jpg"}/
+  -#                          .player-name-inner
+  -#                            %h4 Robert Al Horford
+  -#                            %span Goalkeeper
+  -#                            .more
+  -#                              %a{:href => "http://demo.themeum.com/wordpress/wpsoccer/player/robert-horford/"}
+  -#                                %i.fa.fa-long-arrow-right
+  -#                          %ul
+  -#                            %li
+  -#                              %span.payer-info Weight:
+  -#                              %span 45kg
+  -#                            %li
+  -#                              %span.payer-info Height:
+  -#                              %span 32kg
+  -#                            %li
+  -#                              %span.payer-info Nationality:
+  -#                              %span Spain
+  -#                            %li
+  -#                              %span.payer-info Place of Birth:
+  -#                              %span Warsaw Poland
+  -#                            %li
+  -#                              %span.payer-info Date of Birth:
+  -#                              %span March 5th, 1989
+  -#          / match team
+  -#          #substitutes.tab-pane.fade{:role => "tabpanel"}
+  -#            .match-team-substitues
+  -#              .match-substitues-inner.clearfix
+  -#                .row
+  -#                  .col-xs-2.col-sm-2.time
+  -#                    10
+  -#                    %sub min
+  -#                  .col-xs-8.col-sm-8.subs-players
+  -#                    %h4.subs-payer-out
+  -#                      Michel William in
+  -#                      %i.fa.fa-mail-forward
+  -#                    %h4.subs-payer-in
+  -#                      James Holding out
+  -#                      %i.fa.fa-mail-reply
+  -#                  .col-xs-2.col-sm-2.text-right
+  -#                    %img{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/club_logo3.png", :width => "61"}/
+  -#              .match-substitues-inner.clearfix
+  -#                .row
+  -#                  .col-xs-2.col-sm-2.time
+  -#                    20
+  -#                    %sub min
+  -#                  .col-xs-8.col-sm-8.subs-players
+  -#                    %h4.subs-payer-out
+  -#                      Hansel Patel in
+  -#                      %i.fa.fa-mail-forward
+  -#                    %h4.subs-payer-in
+  -#                      Roben Crusery out
+  -#                      %i.fa.fa-mail-reply
+  -#                  .col-xs-2.col-sm-2.text-right
+  -#                    %img{:alt => "image", :src => "http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/club_logo6.png", :width => "61"}/
+  -#          / match-team-substitues
+  -#          #match_comments.tab-pane.fade.active.in{:role => "tabpanel"}
+  -#            .match-comments
+  -#              .row
+  -#                .col-xs-12.match-comment-inner
+  -#                  #comments.comments-area.comments
+  -#                    #respond.comment-respond
+  -#                      %h3#reply-title.comment-reply-title
+  -#                        Leave a Reply
+  -#                        %small
+  -#                          %a#cancel-comment-reply-link{:href => "/wordpress/wpsoccer/fixture_reasult/uruguay-vs-argentina/#respond", :rel => "nofollow", :style => "display:none;"} Cancel reply
+  -#                      %p.must-log-in
+  -#                        You must be
+  -#                        %a{:href => "http://demo.themeum.com/wordpress/wpsoccer/wp-login.php?redirect_to=http%3A%2F%2Fdemo.themeum.com%2Fwordpress%2Fwpsoccer%2Ffixture_reasult%2Furuguay-vs-argentina%2F"} logged in
+  -#                        to post a comment.
+  -#      / #respond
+  -#      / match-comments
+  -#      .match-discussion-info.clearfix
+  -#        %h3 Summary
+  -#        .match-discussion
+  -#          %p ‘Mes Que Un Club’ it says across the seats at Barcelona’s magnificent Camp Nou stadium. For a long time, the Catalans’ claim to being ‘more than a club’ had a certain amount of justification. And if it was true, then Xavi Hernandez could just as easily have been labelled ‘Mes Que Un Jugador’.
+  -#          %p The metronomic midfielder has been more than just a player for the greatest version of Barcelona ever to take to the field.
+  -#            / match-details-inner
+  -#            / container
+  -#            / match-details

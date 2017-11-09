@@ -1,0 +1,16 @@
+%article.status-publish.format-standard.has-post-thumbnail.hentry
+  = link_to item.slug_path do
+    .featured-wrap{style: "background-image:url(#{image_url(item.main_image)});"}
+
+  .entry-content-wrap
+    .row
+      .entry-headder.col-sm-9
+        .entry-title-wrap
+          %h2.entry-title.blog-entry-title
+            = link_to item.name, item.slug_path
+      -#= render partial: 'news/partials/info', locals: {news: news}
+    .clearfix
+    .entry-summary.clearfix
+      = item.short_description
+    %p
+      = link_to 'Читать далее...', item.slug_path, class: %i(btn btn-style)

@@ -1,0 +1,14 @@
+#secondary-menu
+  .secondary-menu-wrap
+    .container
+      .row
+        .col-md-9
+          .secondary-menu
+            .navbar
+              - if @secondary_menu.present?
+                %ul#menu-secondary-menu.nav.navbar-nav.pull-right
+                  = render partial: 'layouts/partials/secondary_item', collection: @secondary_menu, as: :category
+        .col-md-3.home-search.hidden-xs.hidden-sm
+          %form#searchform{action: search_path, method: :get, role: :form}
+            %input#s.form-control{autocomplete: :off, name: :searching_params, placeholder: 'Поиск . . . . .', type: :text, value: ''}
+            %i.fa.fa-search

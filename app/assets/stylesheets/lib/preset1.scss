@@ -1,0 +1,537 @@
+//colors
+$color_golden_dream_approx: #fad32b;
+$color_bright_sun_approx: #fcd840;
+$color_golden_grass_approx: #d7b529;
+$color_golden_dream_65_approx: rgba(250,211,43,.65);
+
+#main-menu {
+  .nav {
+    > li {
+      > ul li:hover {
+        background-color: $color_golden_dream_approx;
+      }
+      &.nav-myacount a {
+        background-color: $color_golden_dream_approx;
+        &:hover {
+          background-color: $color_golden_grass_approx;
+        }
+      }
+      &.signup-signin > a {
+        &:focus {
+          background-color: $color_golden_dream_approx;
+        }
+        &:hover {
+          background-color: $color_golden_grass_approx;
+        }
+      }
+      &.active > a {
+        color: $color_golden_dream_approx;
+      }
+    }
+    .signup-signin a {
+      background-color: $color_golden_dream_approx;
+      &:hover {
+        background-color: $color_golden_grass_approx;
+      }
+    }
+  }
+  .sub-menu li.active {
+    background-color: $color_golden_dream_approx;
+  }
+}
+#navigation {
+  .woocommerce {
+    .widget_shopping_cart .buttons > a:hover {
+      background-color: $color_golden_dream_approx;
+      background-color: $color_golden_grass_approx;
+    }
+    &.widget_shopping_cart .buttons > a.wc-forward {
+      background-color: $color_golden_dream_approx;
+      &:hover {
+        background-color: $color_golden_grass_approx;
+      }
+    }
+    ul.cart_list li a {
+      color: $color_golden_dream_approx;
+    }
+  }
+  .navbar-header .navbar-toggle {
+    background-color: $color_golden_dream_approx;
+    &:hover {
+      background-color: $color_golden_grass_approx;
+    }
+    &:focus {
+      background-color: $color_golden_grass_approx;
+    }
+  }
+  .woocommerce-page .widget_shopping_cart .buttons > a {
+    background-color: $color_golden_grass_approx;
+  }
+}
+.popular-news-intro {
+  .entry-category a {
+    background-color: $color_golden_dream_approx;
+  }
+  .entry-title a:hover {
+    color: $color_golden_dream_approx;
+  }
+}
+.poll-submit {
+  background-color: $color_golden_dream_approx;
+  &:hover {
+    background-color: $color_golden_grass_approx;
+  }
+}
+.match-comment-login {
+  background-color: $color_golden_dream_approx;
+}
+.point-table-head {
+  background-color: $color_golden_dream_approx;
+}
+.highlights-style2-item {
+  .entry-category a {
+    background-color: $color_golden_dream_approx;
+  }
+  h3 a:hover {
+    color: $color_golden_dream_approx;
+  }
+}
+.latest-team {
+  .latest-team-a {
+    background-color: $color_golden_dream_approx;
+    &:after {
+      border-color: $color_golden_dream_approx;
+    }
+  }
+  .latest-team-b {
+    background-color: $color_golden_dream_approx;
+    &:before {
+      border-color: $color_golden_dream_approx;
+    }
+  }
+}
+.widget {
+  .tagcloud a {
+    background-color: $color_golden_dream_approx;
+    &:hover {
+      background-color: $color_golden_grass_approx;
+    }
+  }
+  ul li a:hover {
+    color: $color_golden_dream_approx;
+  }
+  &.widget_rss ul li a {
+    color: $color_bright_sun_approx;
+  }
+}
+.entry-blog-meta {
+  border-color: $color_golden_dream_approx;
+  ul li.category a {
+    background-color: $color_golden_dream_approx;
+  }
+}
+.themeum-register {
+  background-color: $color_golden_dream_approx;
+}
+.themeum-reg {
+  background-color: $color_golden_dream_approx;
+  margin-bottom: 20px;
+}
+.slider2-title {
+  background-color: $color_golden_dream_approx;
+}
+.home-btn {
+  background-color: $color_golden_dream_approx;
+}
+.post-navigation {
+  .previous-post a {
+    background-color: $color_golden_dream_approx;
+    &:hover {
+      background-color: $color_golden_grass_approx;
+    }
+  }
+  .next-post a {
+    background-color: $color_golden_dream_approx;
+    &:hover {
+      background-color: $color_golden_grass_approx;
+    }
+  }
+}
+.woocommerce {
+  .widget_price_filter {
+    .ui-slider {
+      .ui-slider-range {
+        background-color: $color_golden_dream_approx;
+      }
+      .ui-slider-handle {
+        background-color: $color_golden_dream_approx;
+      }
+    }
+    .price_slider_amount .button {
+      background-color: $color_golden_dream_approx;
+    }
+    .price_slider_wrapper .ui-widget-content {
+      background-color: $color_golden_grass_approx;
+    }
+  }
+  .woocommerce-message {
+    border-color: $color_golden_dream_approx;
+  }
+  .woocommerce-info {
+    border-color: $color_golden_dream_approx;
+  }
+  .product-thumbnail-outer .add_to_cart_button {
+    background-color: $color_golden_dream_approx;
+    &:hover {
+      background-color: $color_golden_grass_approx;
+    }
+  }
+  #respond input#submit.alt {
+    background-color: $color_golden_dream_approx;
+    &:hover {
+      background-color: $color_golden_grass_approx;
+    }
+  }
+  a.button {
+    background-color: $color_golden_dream_approx;
+    &.alt {
+      background-color: $color_golden_dream_approx;
+      &:hover {
+        background-color: $color_golden_grass_approx;
+      }
+    }
+    &:hover {
+      background-color: $color_golden_grass_approx;
+    }
+  }
+  button.button.alt {
+    background-color: $color_golden_dream_approx;
+    &:hover {
+      background-color: $color_golden_grass_approx;
+    }
+  }
+  input.button {
+    background-color: $color_golden_dream_approx;
+    &.alt {
+      background-color: $color_golden_dream_approx;
+      &:hover {
+        background-color: $color_golden_grass_approx;
+      }
+    }
+    &:hover {
+      background-color: $color_golden_grass_approx;
+    }
+  }
+  nav.woocommerce-pagination ul li {
+    a {
+      &:hover {
+        background-color: $color_golden_dream_approx;
+      }
+      &:focus {
+        background-color: $color_golden_dream_approx;
+      }
+    }
+    span.current {
+      background-color: $color_golden_dream_approx;
+    }
+  }
+  #content nav.woocommerce-pagination ul li {
+    a {
+      &:hover {
+        background-color: $color_golden_dream_approx;
+      }
+      &:focus {
+        background-color: $color_golden_dream_approx;
+      }
+    }
+    span.current {
+      background-color: $color_golden_dream_approx;
+    }
+  }
+  div.product:hover .product-thumbnail-outer-inner {
+    border-color: $color_golden_dream_approx;
+  }
+  &.widget_shopping_cart .total {
+    border-color: $color_golden_dream_approx;
+    border-color: $color_golden_dream_approx;
+  }
+  .widget_shopping_cart .total {
+    border-color: $color_golden_dream_approx;
+    border-color: $color_golden_dream_approx;
+  }
+}
+.woocommerce-page {
+  .widget_price_filter .price_slider_amount .button {
+    background-color: $color_golden_dream_approx;
+  }
+  nav.woocommerce-pagination ul li {
+    a {
+      &:hover {
+        background-color: $color_golden_dream_approx;
+      }
+      &:focus {
+        background-color: $color_golden_dream_approx;
+      }
+    }
+    span.current {
+      background-color: $color_golden_dream_approx;
+    }
+  }
+  #content nav.woocommerce-pagination ul li {
+    a {
+      &:hover {
+        background-color: $color_golden_dream_approx;
+      }
+      &:focus {
+        background-color: $color_golden_dream_approx;
+      }
+    }
+    span.current {
+      background-color: $color_golden_dream_approx;
+    }
+  }
+  &.widget_shopping_cart .total {
+    border-color: $color_golden_dream_approx;
+  }
+  .widget_shopping_cart .total {
+    border-color: $color_golden_dream_approx;
+  }
+}
+.cart-has-products {
+  background-color: $color_golden_dream_approx;
+}
+a {
+  color: $color_golden_dream_approx;
+  &:focus {
+    color: $color_golden_dream_approx;
+  }
+  &:hover {
+    color: $color_bright_sun_approx;
+  }
+  &.home-btn:hover {
+    background-color: $color_golden_grass_approx;
+  }
+}
+#featured-ideas {
+  a:hover {
+    color: $color_golden_dream_approx;
+  }
+  .navigation li.active a {
+    color: $color_golden_dream_approx;
+  }
+}
+.match-detail-league-title {
+  color: $color_golden_dream_approx;
+}
+.slider2-time {
+  color: $color_golden_dream_approx;
+}
+.slider2-counter {
+  color: $color_golden_dream_approx;
+}
+.wpcf7-form-control.wpcf7-submit {
+  background-color: $color_golden_dream_approx;
+  &:hover {
+    background-color: $color_golden_grass_approx;
+  }
+}
+
+#comments_list .form-submit #submit,
+#comments .form-submit #submit {
+  background-color: $color_golden_dream_approx;
+}
+.themeum-pagination .pagination {
+  > li {
+    > a {
+      &:focus {
+        background-color: $color_golden_dream_approx;
+      }
+      &:hover {
+        background-color: $color_golden_dream_approx;
+      }
+    }
+    > span {
+      &:focus {
+        background-color: $color_golden_dream_approx;
+      }
+      &:hover {
+        background-color: $color_golden_dream_approx;
+      }
+    }
+  }
+  > .active {
+    > a {
+      background-color: $color_golden_dream_approx;
+      &:focus {
+        background-color: $color_golden_dream_approx;
+      }
+      &:hover {
+        background-color: $color_golden_dream_approx;
+      }
+    }
+    > span {
+      background-color: $color_golden_dream_approx;
+      &:focus {
+        background-color: $color_golden_dream_approx;
+      }
+      &:hover {
+        background-color: $color_golden_dream_approx;
+      }
+    }
+  }
+}
+.highlights-intro .entry-category a {
+  background-color: $color_golden_dream_approx;
+}
+.themeum-title .icon-bar {
+  background-color: $color_golden_dream_approx;
+}
+.gallery-controll .flex-direction-nav a {
+  background-color: $color_golden_dream_approx;
+}
+.gallery-controll-thumb .flex-direction-nav a {
+  background-color: $color_golden_dream_approx;
+}
+.breaking-news-title h2 {
+  background-color: $color_golden_dream_approx;
+  &:before {
+    background-color: $color_golden_dream_approx;
+  }
+}
+.player-share ul li a:hover {
+  background-color: $color_golden_dream_approx;
+}
+.fixture-teams-list h3.fixture-title {
+  background-color: $color_golden_dream_approx;
+  background-color: $color_golden_dream_approx;
+}
+.player-name-inner .more {
+  background-color: $color_golden_dream_approx;
+}
+.themeum-featured-control a {
+  background-color: $color_golden_dream_approx;
+}
+.player-carousel-control a {
+  background-color: $color_golden_dream_approx;
+}
+.themeum-smart-link .pull-right:hover {
+  background-color: $color_golden_dream_approx;
+}
+.flexslider .slides.gallery-thumb-image li:hover {
+  background-color: $color_golden_dream_approx;
+}
+.goal-timeline ul {
+  &.goal-timeline1:after {
+    background-color: $color_golden_dream_approx;
+  }
+  &.goal-timeline2:after {
+    background-color: $color_golden_dream_approx;
+  }
+}
+.honours-intro .pull-left {
+  background-color: $color_golden_dream_approx;
+}
+.btn.btn-style {
+  background-color: $color_golden_dream_approx;
+}
+#sign-form form input.btn-block {
+  background-color: $color_golden_dream_approx;
+}
+.nav.club-details-tab-nav > li > a:after {
+  background-color: $color_golden_dream_approx;
+}
+.woocommerce-product-search input[type=submit] {
+  background-color: $color_golden_dream_approx;
+}
+.product-thumbnail-outer-inner span.product-cat a {
+  background-color: $color_golden_dream_approx;
+  &:hover {
+    background-color: $color_golden_grass_approx;
+  }
+}
+.form-control:focus {
+  border-color: $color_golden_dream_approx;
+}
+.themeum-video-post-wrapper:hover i {
+  border-color: $color_golden_dream_approx;
+  color: $color_golden_dream_approx;
+}
+sup.featured-post {
+  color: $color_golden_dream_approx;
+}
+#footer .widget a:hover {
+  color: $color_golden_dream_approx;
+}
+.themeum-person .social-icon a:hover {
+  color: $color_golden_dream_approx;
+}
+#mobile-menu ul li {
+  &:hover > a {
+    color: $color_golden_dream_approx;
+    color: $color_golden_dream_approx;
+  }
+  &.active > a {
+    color: $color_golden_dream_approx;
+  }
+}
+#popular-ideas .details {
+  h4 a:hover {
+    color: $color_golden_dream_approx;
+  }
+  .entry-meta a:hover {
+    color: $color_golden_dream_approx;
+  }
+}
+.featured-wrap .share-btn {
+  color: $color_golden_dream_approx;
+}
+.themeum-social-button ul li a:hover {
+  color: $color_golden_dream_approx;
+}
+.themeum-recent-result-inner .clubnames .pull-right {
+  color: $color_golden_dream_approx;
+}
+.themeum-default-intro .entry-title a:hover {
+  color: $color_golden_dream_approx;
+}
+.themeum-player .player-name a:hover {
+  color: $color_golden_dream_approx;
+}
+.all-highlights-style2-item h3 a:hover {
+  color: $color_golden_dream_approx;
+}
+.themeum-featured-item h3 a:hover {
+  color: $color_golden_dream_approx;
+}
+.themeum-video-post-item-style2 .entry-title a:hover {
+  color: $color_golden_dream_approx;
+}
+#menu-secondary-menu.nav > li > a {
+  &:focus {
+    color: $color_golden_dream_approx;
+  }
+  &:hover {
+    color: $color_golden_dream_approx;
+  }
+}
+.home-search form#searchform:hover {
+  i {
+    color: $color_golden_dream_approx;
+  }
+  input::-webkit-input-placeholder {
+    color: $color_golden_dream_approx;
+  }
+}
+.wpb_tour_next_prev_nav a:hover {
+  background-color: $color_golden_grass_approx;
+}
+.slider2-carousel-indicators-inner li.active {
+  background-color: $color_golden_dream_65_approx;
+}
+.slider2-carousel-indicators .nano > .nano-pane > .nano-slider {
+  background-color: $color_golden_dream_65_approx;
+}
+
+.breaking-news-controller > a{
+  color: $color_golden_dream_approx!important;
+}

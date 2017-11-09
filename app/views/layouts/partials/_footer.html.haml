@@ -1,0 +1,23 @@
+%footer#footer.footer-wrap
+  .footer-wrap-inner
+    .container
+      .row
+        .col-md-4.col-sm-12.col-xs-12
+          .thm-footer-1-inner
+            .thm-footer-1
+              .footer-logo.pull-left
+                .type
+                  %div
+                    = 'DUFLD'
+                  %span.fa.fa-futbol-o
+                  %em
+                    = '.com.ua'
+            = render partial: 'layouts/partials/footer_menu', locals: {menu: @secondary_menu}
+            = render partial: 'layouts/partials/footer_menu/social_block'
+            .copyright
+              %div
+                Все права защищены
+                != "&reg;"
+                %strong dufldo.com.ua
+        = @menu_tournaments.each_slice(2) do |categories|
+          = render partial: 'layouts/partials/tournaments_footer_menu', collection: categories, as: :category

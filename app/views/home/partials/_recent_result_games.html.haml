@@ -1,0 +1,29 @@
+- if tournaments.present?
+  .themeum-recent-result
+    #recent-result.carousel.slide{data: {ride: :carousel, interval: :false}}
+      .themeum-title.themeum-title-black
+        .themeum-title-icon
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %h2
+          %span
+            %span Результаты
+            %strong Игр
+        .recent-result-control
+          = link_to '#recent-result', role: :button, data: {slide: :prev,  turbolinks: false} do
+            %i.fa.fa-angle-left
+          = link_to '#recent-result', role: :button, data: {slide: :next,  turbolinks: false} do
+            %i.fa.fa-angle-right
+      .themeum-recent-result-inner
+        .carousel-inner{role: :listbox}
+          - tournaments.each_with_index do |tournament, index|
+            .item{class: index == 0 ? :active : nil }
+              = link_to tournament.slug_path, class: :clubnames do
+                %span
+                  = tournament.title
+              - tournament.recent_results.limit(Tournament::RECENT_RESULTS_LIMIT).each do |game|
+                = render 'home/recent_results/result', game: game.decorate
+  :javascript
+    count = $('#recent-result').find('.item').length
+    $(document).ready(function() { if (count > 1) $('#recent-result').carousel({interval: false})});

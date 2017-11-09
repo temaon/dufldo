@@ -1,0 +1,6 @@
+- if menu.present?
+  .thm-footer-1
+    #nav_menu-2.widget.widget_nav_menu
+      .menu-footer-1-container
+        %ul#menu-footer-1.menu
+          = render partial: 'layouts/partials/footer_menu/footer_static_item', collection: menu, as: :item

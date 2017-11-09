@@ -1,0 +1,17 @@
+.entry-blog-meta.col-sm-3
+  %ul
+    %li.category
+      = link_to news.category.name, news.category.decorate.slug_path
+    - if news.user.present?
+      %li.author-by
+        By
+        %span.author
+          -#%a{:href => "http://demo.themeum.com/wordpress/wpsoccer/author/admin/", :rel => "author", :title => "Posts by admin"}
+          = link_to news.user.username, '#'
+    %li.publish-date
+      %time.entry-date
+        = news.formatted_date
+    %li.comments-link
+      = link_to '#comments', data: {turbolinks: false} do
+        %span.leave-reply
+          = news.thread.comments.size > 0 ? "Комментарии #{news.thread.filtered_comments.size}" : 'Еще нет комментариев'

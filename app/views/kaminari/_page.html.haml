@@ -1,0 +1,14 @@
+-#  Link showing page number
+-#  available local variables
+-#    page:          a page object for "this" page
+-#    url:           url to this page
+-#    current_page:  a page object for the currently displayed page
+-#    total_pages:   total number of pages
+-#    per_page:      number of items to fetch per page
+-#    remote:        data-remote
+%li{:class => "#{'active' if page.current?}"}
+  - if page.current?
+    %span
+      = page.number
+  - else
+    = link_to_unless page.current?, page,  defined?(url_new).nil? ? url : "#{url_new}#{page.first? ? '' :  format_query_url(URI.parse(request.url).query.to_s + '&page=' + page.number.to_s)}" , {remote: remote, rel: page.next? ? 'next' : page.prev? ? 'prev' : nil}

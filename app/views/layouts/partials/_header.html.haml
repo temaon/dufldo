@@ -1,0 +1,53 @@
+%header#masthead.site-header.header{role: :banner}
+  #header-container
+    #navigation.container
+      .row
+        .col-sm-2
+          .navbar-header
+            %button.navbar-toggle{data: {target: '.navbar-collapse', toggle: :collapse}, type: :button}
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            .logo-wrapper
+              = link_to root_path, class: %i(navbar-brand) do
+                = image_tag 'logo_main.png', class: %i(enter-logo img-responsive)
+        .col-sm-10.woo-menu-item-add
+          #main-menu.hidden-xs
+            %ul#menu-main-menu.nav
+              - if @menu_tournaments.present?
+                = render partial: 'tournament_categories/tournament_category', collection: @menu_tournaments, as: :category
+              - unless current_frontend_user
+                %li.signup-signin.menu-item.menu-item-type-post_type.menu-item-object-page.has-menu-child
+                  = link_to 'Вход', new_frontend_user_session_path
+              - else
+                %li.dropdown
+                  = link_to '#', class: %i(dropdown-toggle), data: {toggle: :dropdown} do
+                    %span.glyphicon.glyphicon-user>
+                    %strong
+                      = 'Профиль'
+                    %span.glyphicon.glyphicon-chevron-down
+                  %ul.dropdown-menu
+                    %li
+                      .navbar-login
+                        .row
+                          .col-lg-4
+                            %p.text-center
+                              %span.glyphicon.glyphicon-user.icon-size
+                          .col-lg-8
+                            %p
+                              %strong
+                                = current_frontend_user.decorate.full_name
+                    %li.divider
+                    %li
+                      .navbar-login.navbar-login-session
+                        .row
+                          .col-lg-12
+                            %p
+                              = link_to 'Выход', destroy_frontend_user_session_path, method: :delete, class: %i(btn btn-warning btn-block)
+        #mobile-menu.visible-xs
+          .collapse.navbar-collapse
+            %ul#menu-main-menu-1.nav.navbar-nav
+              - if @menu_tournaments.present?
+                = render partial: 'tournament_categories/tournament_category', collection: @menu_tournaments, as: :category
+              %li.signup-signin.menu-item.menu-item-type-post_type.menu-item-object-page.has-menu-child
+                = link_to 'Вход', new_frontend_user_session_path

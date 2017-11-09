@@ -1,0 +1,41 @@
+%section#main
+  .sub-title{style: "background-image: url(#{image_url(news.main_image)});background-size: cover; background-position: 50% 50%; padding: 100px 0 55px;"}
+    .container
+      .sub-title-inner.pull-right
+        %h2
+          = news.title
+  .container
+    .row
+      #content.site-content.col-md-8{role: :main}
+        %article.status-publish.format-standard.has-post-thumbnail.hentry
+          - if news.has_video?
+            .video-section.featured-wrap
+              .frame.themeum-overlay-wrap.yes{style: "background: url(#{image_url(news.second_image)}) center no-repeat; background-size: cover"}
+              = link_to 'Смотреть видео', '#', class: %i(link-video)
+              = render partial: 'partials/socials/shared', locals: {url: news.slug_url}
+              %iframe{allowfullscreen: '', frameborder: 0, height: '100%', src: news.get_video, width: '100%'}
+          - else
+            .featured-wrap{style: "background-image:url(#{image_url(news.second_image)});"}
+              = render partial: 'partials/socials/shared', locals: {url: news.slug_url}
+          .entry-content-wrap
+            .row
+              .entry-headder.col-sm-9
+                .entry-title-wrap
+                  %h2.entry-title.blog-entry-title
+                    = news.title
+              = render partial: 'news/partials/info', locals: {news: news}
+            .clearfix
+            .entry-summary.clearfix
+              != news.description
+            .entry-summary.clearfix
+              = render partial: 'news/partials/gallery', locals: {gallery: news.images}
+              = render partial: 'news/partials/gallery_nav', locals: {gallery: news.images}
+            .entry-summary.clearfix
+              .comments#comments
+                = commontator_thread(news)
+      #sidebar.col-sm-4{role: :complementary}
+        %aside.widget-area
+          = render partial: 'news/partials/popular_news', locals: {news: popular_news}
+          = render partial: 'news/partials/tags', locals: {tags: tags}
+          = render partial: 'news/partials/categories_list', locals: {categories: categories}
+

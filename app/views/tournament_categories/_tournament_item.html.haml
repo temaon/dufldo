@@ -1,0 +1,4 @@
+%li.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-has-children.has-menu-child
+  = link_to post.title, post.slug_path
+  %ul.sub-menu{role: :menu}
+    = render partial: 'layouts/partials/tournament_sub_menu', locals: {post: post}

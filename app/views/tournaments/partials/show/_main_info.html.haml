@@ -1,0 +1,11 @@
+#fixtures.tab-pane.fade.active.in{role: :tabpanel}
+  .container
+    .row
+      #content.site-content.col-md-12{role: :main}
+        %article.status-publish.format-standard.has-post-thumbnail.hentry
+          .entry-content-wrap
+            .clearfix
+            .entry-summary.clearfix
+              != tournament.description
+              = render partial: 'tournaments/partials/gallery', locals: {gallery: tournament.images}
+              = render partial: 'tournaments/partials/gallery_nav', locals: {gallery: tournament.images}

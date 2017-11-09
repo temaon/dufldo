@@ -1,0 +1,92 @@
+//colors
+$black: #000;
+$white: #fff;
+
+//fonts
+$font_0: Roboto;
+$font_1: Helvetica;
+$font_2: sans-serif;
+
+//@extend-elements
+//original selectors
+//#main-menu .nav >li >a, #main-menu ul.sub-menu li >a
+//%extend_1 {
+//  font-family: $font_0, $font_1, $font_2;
+//  font-weight: 100;
+//  font-style: normal;
+//  color: $white;
+//  font-size: 14px;
+//}
+//
+//p{
+//  margin: auto!important;
+//}
+//
+//#main-menu {
+//  .nav > li > a {
+//    @extend %extend_1;
+//  }
+//  ul.sub-menu li > a {
+//    @extend %extend_1;
+//  }
+//}
+//h1 {
+//  font-family: $font_0, $font_1, $font_2;
+//  font-weight: 700;
+//  font-style: normal;
+//  color: $black;
+//  font-size: 42px;
+//}
+//h2 {
+//  font-family: $font_0, $font_1, $font_2;
+//  font-weight: 700;
+//  font-style: normal;
+//  color: $black;
+//  font-size: 36px;
+//}
+//h3 {
+//  font-family: $font_0, $font_1, $font_2;
+//  font-weight: 700;
+//  font-style: normal;
+//  color: $black;
+//  font-size: 24px;
+//}
+//h4 {
+//  font-family: $font_0, $font_1, $font_2;
+//  font-weight: 700;
+//  font-style: normal;
+//  color: $black;
+//  font-size: 20px;
+//}
+//h5 {
+//  font-family: $font_0, $font_1, $font_2;
+//  font-weight: 700;
+//  font-style: normal;
+//  color: $black;
+//  font-size: 18px;
+//}
+.wpb_animate_when_almost_visible {
+  opacity: 1;
+}
+
+i.ibox-content {
+  clear: both;
+  font-size: 20px;
+  margin-left: 20px;
+  text-align: center;
+  color: #3498db;
+  float: left;
+}
+
+.btn-primary{
+  float: left;
+  margin: 0px 20px;
+}
+
+.btn-default{
+  float: left;
+}
+
+.modal-backdrop{
+ z-index: 0!important;
+}

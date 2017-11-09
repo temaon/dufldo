@@ -1,0 +1,5 @@
+.col-sm-6.paddingleft
+  = link_to team.slug_path do
+    = image_tag team.logo, alt: team.name, width: 40, class: %i(pull-left)
+    %h4
+      = team.name

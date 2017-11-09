@@ -1,0 +1,14 @@
+- if news.present?
+  .themeum-title
+    .themeum-title-icon
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    %h2{style: 'color:#000000;font-size:24px;margin-bottom:30px;padding:0px 0px 0px 0px;font-weight:700;'}
+      %span Наши
+      %strong Новости
+  .highlights.themeum-default-ul
+    = render partial: 'home/news/news_big', locals: {news: news.shift}
+    - news.each_slice(2) do |item|
+      .row
+        = render partial: 'home/news/news_small', collection: item, as: :news

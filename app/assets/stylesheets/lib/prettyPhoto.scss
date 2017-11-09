@@ -1,0 +1,1079 @@
+//colors
+$color_desert_storm_approx: #f8f8f8;
+$white: #fff;
+$black: #000;
+$color_silver_chalice_approx: #aaa;
+$color_mountain_mist_approx: #999;
+$color_cloud_approx: #c4c4c4;
+$black_50: rgba(0,0,0,0.5);
+
+//fonts
+$font_0: Georgia;
+
+//urls
+$url_0: image-url('prettyPhoto/default/sprite.png');
+$url_1: image-url('prettyPhoto/default/sprite_x.png');
+$url_2: image-url('prettyPhoto/default/sprite_y.png');
+$url_3: image-url('prettyPhoto/default/sprite_next.png');
+$url_4: image-url('prettyPhoto/default/sprite_prev.png');
+$url_5: image-url('prettyPhoto/default/default_thumb.png');
+$url_6: image-url('prettyPhoto/default/loader.gif');
+$url_7: image-url('prettyPhoto/light_rounded/sprite.png');
+$url_8: image-url('prettyPhoto/light_rounded/btnNext.png');
+$url_9: image-url('prettyPhoto/light_rounded/btnPrevious.png');
+$url_10: image-url('prettyPhoto/light_rounded/loader.gif');
+$url_11: image-url('prettyPhoto/dark_rounded/sprite.png');
+$url_12: image-url('prettyPhoto/dark_rounded/contentPattern.png');
+$url_13: image-url('prettyPhoto/dark_rounded/btnNext.png');
+$url_14: image-url('prettyPhoto/dark_rounded/btnPrevious.png');
+$url_15: image-url('prettyPhoto/dark_rounded/loader.gif');
+$url_16: image-url('prettyPhoto/dark_square/loader.gif');
+$url_17: image-url('prettyPhoto/dark_square/sprite.png');
+$url_18: image-url('prettyPhoto/dark_square/btnNext.png');
+$url_19: image-url('prettyPhoto/dark_square/btnPrevious.png');
+$url_20: image-url('prettyPhoto/light_square/sprite.png');
+$url_21: image-url('prettyPhoto/light_square/btnNext.png');
+$url_22: image-url('prettyPhoto/light_square/btnPrevious.png');
+$url_23: image-url('prettyPhoto/facebook/sprite.png');
+$url_24: image-url('prettyPhoto/facebook/contentPatternTop.png');
+$url_25: image-url('prettyPhoto/facebook/contentPatternLeft.png');
+$url_26: image-url('prettyPhoto/facebook/contentPatternRight.png');
+$url_27: image-url('prettyPhoto/facebook/loader.gif');
+$url_28: image-url('prettyPhoto/facebook/btnNext.png');
+$url_29: image-url('prettyPhoto/facebook/btnPrevious.png');
+$url_30: image-url('prettyPhoto/facebook/contentPatternBottom.png');
+$url_31: image-url('prettyPhoto/facebook/default_thumbnail.gif');
+
+//@extend-elements
+//original selectors
+//div.pp_default .pp_nav .pp_play, div.pp_default .pp_nav .pp_pause
+%extend_1 {
+  background: $url_0 -51px 1px no-repeat;
+  height: 30px;
+  width: 30px;
+}
+
+//original selectors
+//div.pp_default a.pp_arrow_previous, div.pp_default a.pp_arrow_next
+%extend_2 {
+  background: $url_0 -31px -3px no-repeat;
+  height: 20px;
+  margin: 4px 0 0;
+  width: 20px;
+}
+
+//original selectors
+//.pp_nav .pp_play, .pp_nav .pp_pause
+%extend_3 {
+  float: left;
+  margin-right: 4px;
+  text-indent: -10000px;
+}
+
+//original selectors
+//a.pp_arrow_previous, a.pp_arrow_next
+%extend_4 {
+  display: block;
+  float: left;
+  height: 15px;
+  margin-top: 3px;
+  overflow: hidden;
+  text-indent: -10000px;
+  width: 14px;
+}
+
+//original selectors
+//a.pp_expand, a.pp_contract
+%extend_5 {
+  cursor: pointer;
+  display: none;
+  height: 20px;
+  position: absolute;
+  right: 30px;
+  text-indent: -10000px;
+  top: 10px;
+  width: 20px;
+  z-index: 20000;
+}
+
+
+div {
+  &.pp_default {
+    .pp_top {
+      height: 13px;
+      .pp_middle {
+        height: 13px;
+        background: $url_1 top left repeat-x;
+      }
+      .pp_left {
+        height: 13px;
+        background: $url_0 -78px -93px no-repeat;
+      }
+      .pp_right {
+        height: 13px;
+        background: $url_0 -112px -93px no-repeat;
+      }
+    }
+    .pp_bottom {
+      height: 13px;
+      .pp_left {
+        height: 13px;
+        background: $url_0 -78px -127px no-repeat;
+      }
+      .pp_middle {
+        height: 13px;
+        background: $url_1 bottom left repeat-x;
+      }
+      .pp_right {
+        height: 13px;
+        background: $url_0 -112px -127px no-repeat;
+      }
+    }
+    .pp_content {
+      background-color: $white;
+      .ppt {
+        color: $color_desert_storm_approx;
+      }
+    }
+    .pp_content_container {
+      .pp_left {
+        background: $url_2 -7px 0 repeat-y;
+        padding-left: 13px;
+      }
+      .pp_right {
+        background: $url_2 top right repeat-y;
+        padding-right: 13px;
+      }
+      .pp_details {
+        margin-top: 5px;
+      }
+    }
+    .pp_expand {
+      background: $url_0 0 -29px no-repeat;
+      cursor: pointer;
+      width: 28px;
+      height: 28px;
+      &:hover {
+        background: $url_0 0 -56px no-repeat;
+        cursor: pointer;
+      }
+    }
+    .pp_contract {
+      background: $url_0 0 -84px no-repeat;
+      cursor: pointer;
+      width: 28px;
+      height: 28px;
+      &:hover {
+        background: $url_0 0 -113px no-repeat;
+        cursor: pointer;
+      }
+    }
+    .pp_close {
+      width: 30px;
+      height: 30px;
+      background: $url_0 2px 1px no-repeat;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+    .pp_gallery {
+      a {
+        &.pp_arrow_previous {
+          position: static;
+          left: auto;
+        }
+        &.pp_arrow_next {
+          position: static;
+          left: auto;
+        }
+      }
+      ul li {
+        a {
+          background: $url_5 center center $color_desert_storm_approx;
+          border: 1px solid $color_silver_chalice_approx;
+          &:hover {
+            border-color: $white;
+          }
+        }
+        &.selected a {
+          border-color: $white;
+        }
+      }
+    }
+    .pp_social {
+      margin-top: 7px;
+    }
+    .pp_nav {
+      clear: none;
+      height: 30px;
+      width: 110px;
+      position: relative;
+      .pp_play {
+        @extend %extend_1;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+      .pp_pause {
+        @extend %extend_1;
+        background-position: -51px -29px;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+      .currentTextHolder {
+        font-family: $font_0;
+        font-style: italic;
+        color: $color_mountain_mist_approx;
+        font-size: 11px;
+        left: 75px;
+        line-height: 25px;
+        margin: 0;
+        padding: 0 0 0 10px;
+        position: absolute;
+        top: 2px;
+      }
+    }
+    .pp_details {
+      position: relative;
+    }
+    a {
+      &.pp_arrow_previous {
+        @extend %extend_2;
+      }
+      &.pp_arrow_next {
+        @extend %extend_2;
+        left: 52px;
+        background-position: -82px -3px;
+      }
+    }
+    .pp_description {
+      font-size: 11px;
+      font-weight: bold;
+      line-height: 14px;
+      margin: 5px 50px 5px 0;
+    }
+    .pp_loaderIcon {
+      background: $url_6 center center no-repeat;
+    }
+    .pp_next:hover {
+      background: $url_3 center right no-repeat;
+      cursor: pointer;
+    }
+    .pp_previous:hover {
+      background: $url_4 center left no-repeat;
+      cursor: pointer;
+    }
+    #pp_full_res .pp_inline {
+      color: $black;
+    }
+    .pp_arrow_next:hover {
+      opacity: 0.7;
+    }
+    .pp_arrow_previous:hover {
+      opacity: 0.7;
+    }
+  }
+  &.light_rounded {
+    .pp_top {
+      .pp_left {
+        background: $url_7 -88px -53px no-repeat;
+      }
+      .pp_middle {
+        background: $white;
+      }
+      .pp_right {
+        background: $url_7 -110px -53px no-repeat;
+      }
+    }
+    .pp_content {
+      background-color: $white;
+      .ppt {
+        color: $black;
+      }
+    }
+    .pp_content_container {
+      .pp_left {
+        background: $white;
+      }
+      .pp_right {
+        background: $white;
+      }
+    }
+    .pp_expand {
+      background: $url_7 -31px -26px no-repeat;
+      cursor: pointer;
+      &:hover {
+        background: $url_7 -31px -47px no-repeat;
+        cursor: pointer;
+      }
+    }
+    .pp_contract {
+      background: $url_7 0 -26px no-repeat;
+      cursor: pointer;
+      &:hover {
+        background: $url_7 0 -47px no-repeat;
+        cursor: pointer;
+      }
+    }
+    .pp_close {
+      width: 75px;
+      height: 22px;
+      background: $url_7 -1px -1px no-repeat;
+      cursor: pointer;
+    }
+    .pp_details {
+      position: relative;
+    }
+    .pp_description {
+      margin-right: 85px;
+    }
+    .pp_nav {
+      .pp_play {
+        background: $url_7 -1px -100px no-repeat;
+        height: 15px;
+        width: 14px;
+      }
+      .pp_pause {
+        background: $url_7 -24px -100px no-repeat;
+        height: 15px;
+        width: 14px;
+      }
+    }
+    .pp_arrow_previous {
+      background: $url_7 0 -71px no-repeat;
+      &.disabled {
+        background-position: 0 -87px;
+        cursor: default;
+      }
+    }
+    .pp_arrow_next {
+      background: $url_7 -22px -71px no-repeat;
+      &.disabled {
+        background-position: -22px -87px;
+        cursor: default;
+      }
+    }
+    .pp_bottom {
+      .pp_left {
+        background: $url_7 -88px -80px no-repeat;
+      }
+      .pp_middle {
+        background: $white;
+      }
+      .pp_right {
+        background: $url_7 -110px -80px no-repeat;
+      }
+    }
+    .pp_loaderIcon {
+      background: $url_10 center center no-repeat;
+    }
+    .pp_next:hover {
+      background: $url_8 center right no-repeat;
+      cursor: pointer;
+    }
+    .pp_previous:hover {
+      background: $url_9 center left no-repeat;
+      cursor: pointer;
+    }
+    #pp_full_res .pp_inline {
+      color: $black;
+    }
+    .pp_gallery a {
+      &.pp_arrow_previous {
+        margin-top: 12px !important;
+      }
+      &.pp_arrow_next {
+        margin-top: 12px !important;
+      }
+    }
+  }
+  &.dark_rounded {
+    .pp_top {
+      .pp_left {
+        background: $url_11 -88px -53px no-repeat;
+      }
+      .pp_middle {
+        background: $url_12 top left repeat;
+      }
+      .pp_right {
+        background: $url_11 -110px -53px no-repeat;
+      }
+    }
+    .pp_content_container {
+      .pp_left {
+        background: $url_12 top left repeat-y;
+      }
+      .pp_right {
+        background: $url_12 top right repeat-y;
+      }
+    }
+    .pp_content {
+      background: $url_12 top left repeat;
+    }
+    .pp_expand {
+      background: $url_11 -31px -26px no-repeat;
+      cursor: pointer;
+      &:hover {
+        background: $url_11 -31px -47px no-repeat;
+        cursor: pointer;
+      }
+    }
+    .pp_contract {
+      background: $url_11 0 -26px no-repeat;
+      cursor: pointer;
+      &:hover {
+        background: $url_11 0 -47px no-repeat;
+        cursor: pointer;
+      }
+    }
+    .pp_close {
+      width: 75px;
+      height: 22px;
+      background: $url_11 -1px -1px no-repeat;
+      cursor: pointer;
+    }
+    .pp_details {
+      position: relative;
+    }
+    .pp_description {
+      margin-right: 85px;
+      color: $white;
+    }
+    .currentTextHolder {
+      color: $color_cloud_approx;
+    }
+    .pp_nav {
+      .pp_play {
+        background: $url_11 -1px -100px no-repeat;
+        height: 15px;
+        width: 14px;
+      }
+      .pp_pause {
+        background: $url_11 -24px -100px no-repeat;
+        height: 15px;
+        width: 14px;
+      }
+    }
+    .pp_arrow_previous {
+      background: $url_11 0 -71px no-repeat;
+      &.disabled {
+        background-position: 0 -87px;
+        cursor: default;
+      }
+    }
+    .pp_arrow_next {
+      background: $url_11 -22px -71px no-repeat;
+      &.disabled {
+        background-position: -22px -87px;
+        cursor: default;
+      }
+    }
+    .pp_bottom {
+      .pp_left {
+        background: $url_11 -88px -80px no-repeat;
+      }
+      .pp_middle {
+        background: $url_12 top left repeat;
+      }
+      .pp_right {
+        background: $url_11 -110px -80px no-repeat;
+      }
+    }
+    .pp_loaderIcon {
+      background: $url_15 center center no-repeat;
+    }
+    .pp_next:hover {
+      background: $url_13 center right no-repeat;
+      cursor: pointer;
+    }
+    .pp_previous:hover {
+      background: $url_14 center left no-repeat;
+      cursor: pointer;
+    }
+    #pp_full_res .pp_inline {
+      color: $white;
+    }
+    .pp_gallery a {
+      &.pp_arrow_previous {
+        margin-top: 12px !important;
+      }
+      &.pp_arrow_next {
+        margin-top: 12px !important;
+      }
+    }
+  }
+  &.dark_square {
+    .pp_left {
+      background: $black;
+    }
+    .pp_middle {
+      background: $black;
+    }
+    .pp_right {
+      background: $black;
+    }
+    .pp_content {
+      background: $black;
+    }
+    .currentTextHolder {
+      color: $color_cloud_approx;
+    }
+    .pp_description {
+      color: $white;
+      margin: 0 85px 0 0;
+    }
+    .pp_loaderIcon {
+      background: $url_16 center center no-repeat;
+    }
+    .pp_expand {
+      background: $url_17 -31px -26px no-repeat;
+      cursor: pointer;
+      &:hover {
+        background: $url_17 -31px -47px no-repeat;
+        cursor: pointer;
+      }
+    }
+    .pp_contract {
+      background: $url_17 0 -26px no-repeat;
+      cursor: pointer;
+      &:hover {
+        background: $url_17 0 -47px no-repeat;
+        cursor: pointer;
+      }
+    }
+    .pp_close {
+      width: 75px;
+      height: 22px;
+      background: $url_17 -1px -1px no-repeat;
+      cursor: pointer;
+    }
+    .pp_details {
+      position: relative;
+    }
+    .pp_nav {
+      clear: none;
+      .pp_play {
+        background: $url_17 -1px -100px no-repeat;
+        height: 15px;
+        width: 14px;
+      }
+      .pp_pause {
+        background: $url_17 -24px -100px no-repeat;
+        height: 15px;
+        width: 14px;
+      }
+    }
+    .pp_arrow_previous {
+      background: $url_17 0 -71px no-repeat;
+      &.disabled {
+        background-position: 0 -87px;
+        cursor: default;
+      }
+    }
+    .pp_arrow_next {
+      background: $url_17 -22px -71px no-repeat;
+      &.disabled {
+        background-position: -22px -87px;
+        cursor: default;
+      }
+    }
+    #pp_full_res .pp_inline {
+      color: $white;
+    }
+    .pp_gallery a {
+      &.pp_arrow_previous {
+        margin-top: 12px !important;
+      }
+      &.pp_arrow_next {
+        margin-top: 12px !important;
+      }
+    }
+    .pp_next:hover {
+      background: $url_18 center right no-repeat;
+      cursor: pointer;
+    }
+    .pp_previous:hover {
+      background: $url_19 center left no-repeat;
+      cursor: pointer;
+    }
+  }
+  &.light_square {
+    .pp_left {
+      background: $white;
+    }
+    .pp_middle {
+      background: $white;
+    }
+    .pp_right {
+      background: $white;
+    }
+    .pp_content {
+      background: $white;
+      .ppt {
+        color: $black;
+      }
+    }
+    .pp_expand {
+      background: $url_20 -31px -26px no-repeat;
+      cursor: pointer;
+      &:hover {
+        background: $url_20 -31px -47px no-repeat;
+        cursor: pointer;
+      }
+    }
+    .pp_contract {
+      background: $url_20 0 -26px no-repeat;
+      cursor: pointer;
+      &:hover {
+        background: $url_20 0 -47px no-repeat;
+        cursor: pointer;
+      }
+    }
+    .pp_close {
+      width: 75px;
+      height: 22px;
+      background: $url_20 -1px -1px no-repeat;
+      cursor: pointer;
+    }
+    .pp_details {
+      position: relative;
+    }
+    .pp_description {
+      margin-right: 85px;
+    }
+    .pp_nav {
+      .pp_play {
+        background: $url_20 -1px -100px no-repeat;
+        height: 15px;
+        width: 14px;
+      }
+      .pp_pause {
+        background: $url_20 -24px -100px no-repeat;
+        height: 15px;
+        width: 14px;
+      }
+    }
+    .pp_arrow_previous {
+      background: $url_20 0 -71px no-repeat;
+      &.disabled {
+        background-position: 0 -87px;
+        cursor: default;
+      }
+    }
+    .pp_arrow_next {
+      background: $url_20 -22px -71px no-repeat;
+      &.disabled {
+        background-position: -22px -87px;
+        cursor: default;
+      }
+    }
+    .pp_loaderIcon {
+      background: $url_10 center center no-repeat;
+    }
+    #pp_full_res .pp_inline {
+      color: $black;
+    }
+    .pp_gallery a {
+      &.pp_arrow_previous {
+        margin-top: 12px !important;
+      }
+      &.pp_arrow_next {
+        margin-top: 12px !important;
+      }
+    }
+    .pp_next:hover {
+      background: $url_21 center right no-repeat;
+      cursor: pointer;
+    }
+    .pp_previous:hover {
+      background: $url_22 center left no-repeat;
+      cursor: pointer;
+    }
+  }
+  &.facebook {
+    .pp_top {
+      .pp_left {
+        background: $url_23 -88px -53px no-repeat;
+      }
+      .pp_middle {
+        background: $url_24 top left repeat-x;
+      }
+      .pp_right {
+        background: $url_23 -110px -53px no-repeat;
+      }
+    }
+    .pp_content {
+      background: $white;
+      .ppt {
+        color: $black;
+      }
+    }
+    .pp_content_container {
+      .pp_left {
+        background: $url_25 top left repeat-y;
+      }
+      .pp_right {
+        background: $url_26 top right repeat-y;
+      }
+    }
+    .pp_expand {
+      background: $url_23 -31px -26px no-repeat;
+      cursor: pointer;
+      &:hover {
+        background: $url_23 -31px -47px no-repeat;
+        cursor: pointer;
+      }
+    }
+    .pp_contract {
+      background: $url_23 0 -26px no-repeat;
+      cursor: pointer;
+      &:hover {
+        background: $url_23 0 -47px no-repeat;
+        cursor: pointer;
+      }
+    }
+    .pp_close {
+      width: 22px;
+      height: 22px;
+      background: $url_23 -1px -1px no-repeat;
+      cursor: pointer;
+    }
+    .pp_details {
+      position: relative;
+    }
+    .pp_description {
+      margin: 0 37px 0 0;
+    }
+    .pp_loaderIcon {
+      background: $url_27 center center no-repeat;
+    }
+    .pp_arrow_previous {
+      background: $url_23 0 -71px no-repeat;
+      height: 22px;
+      margin-top: 0;
+      width: 22px;
+      &.disabled {
+        background-position: 0 -96px;
+        cursor: default;
+      }
+    }
+    .pp_arrow_next {
+      background: $url_23 -32px -71px no-repeat;
+      height: 22px;
+      margin-top: 0;
+      width: 22px;
+      &.disabled {
+        background-position: -32px -96px;
+        cursor: default;
+      }
+    }
+    .pp_nav {
+      margin-top: 0;
+      p {
+        font-size: 15px;
+        padding: 0 3px 0 4px;
+      }
+      .pp_play {
+        background: $url_23 -1px -123px no-repeat;
+        height: 22px;
+        width: 22px;
+      }
+      .pp_pause {
+        background: $url_23 -32px -123px no-repeat;
+        height: 22px;
+        width: 22px;
+      }
+    }
+    .pp_bottom {
+      .pp_left {
+        background: $url_23 -88px -80px no-repeat;
+      }
+      .pp_middle {
+        background: $url_30 top left repeat-x;
+      }
+      .pp_right {
+        background: $url_23 -110px -80px no-repeat;
+      }
+    }
+    #pp_full_res .pp_inline {
+      color: $black;
+    }
+    .pp_next:hover {
+      background: $url_28 center right no-repeat;
+      cursor: pointer;
+    }
+    .pp_previous:hover {
+      background: $url_29 center left no-repeat;
+      cursor: pointer;
+    }
+  }
+  &.pp_pic_holder {
+    display: none;
+    position: absolute;
+    width: 100px;
+    z-index: 10000;
+    a:focus {
+      outline: none;
+    }
+  }
+  &.pp_overlay {
+    background: $black;
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+  }
+  &.ppt {
+    color: $white;
+    display: none;
+    font-size: 17px;
+    margin: 0 0 5px 15px;
+    z-index: 9999;
+  }
+}
+.pp_top {
+  height: 20px;
+  position: relative;
+  .pp_left {
+    height: 20px;
+    left: 0;
+    position: absolute;
+    width: 20px;
+  }
+  .pp_middle {
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    right: 20px;
+  }
+  .pp_right {
+    height: 20px;
+    left: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20px;
+  }
+}
+.pp_content {
+  height: 40px;
+  min-width: 40px;
+}
+.pp_fade {
+  display: none;
+}
+.pp_content_container {
+  position: relative;
+  text-align: left;
+  width: 100%;
+  .pp_left {
+    padding-left: 20px;
+  }
+  .pp_right {
+    padding-right: 20px;
+  }
+  .pp_details {
+    float: left;
+    margin: 10px 0 2px;
+  }
+}
+.pp_description {
+  display: none;
+  margin: 0;
+}
+.pp_social {
+  float: left;
+  margin: 0;
+  .facebook {
+    float: left;
+    margin-left: 5px;
+    width: 55px;
+    overflow: hidden;
+  }
+  .twitter {
+    float: left;
+  }
+}
+.pp_nav {
+  clear: right;
+  float: left;
+  margin: 3px 10px 0 0;
+  p {
+    float: left;
+    margin: 2px 4px;
+    white-space: nowrap;
+  }
+  .pp_play {
+    @extend %extend_3;
+  }
+  .pp_pause {
+    @extend %extend_3;
+  }
+}
+a {
+  &.pp_arrow_previous {
+    @extend %extend_4;
+  }
+  &.pp_arrow_next {
+    @extend %extend_4;
+  }
+  &.pp_next {
+    background: $url_8 10000px 10000px no-repeat;
+    display: block;
+    float: right;
+    height: 100%;
+    text-indent: -10000px;
+    width: 49%;
+  }
+  &.pp_previous {
+    background: $url_8 10000px 10000px no-repeat;
+    display: block;
+    float: left;
+    height: 100%;
+    text-indent: -10000px;
+    width: 49%;
+  }
+  &.pp_expand {
+    @extend %extend_5;
+  }
+  &.pp_contract {
+    @extend %extend_5;
+  }
+  &.pp_close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    line-height: 22px;
+    text-indent: -10000px;
+  }
+}
+.pp_hoverContainer {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2000;
+}
+.pp_gallery {
+  display: none;
+  left: 50%;
+  margin-top: -50px;
+  position: absolute;
+  z-index: 10000;
+  div {
+    float: left;
+    overflow: hidden;
+    position: relative;
+  }
+  ul {
+    float: left;
+    height: 35px;
+    margin: 0 0 0 5px;
+    padding: 0;
+    position: relative;
+    white-space: nowrap;
+    a {
+      border: 1px $black solid;
+      border: 1px $black_50 solid;
+      display: block;
+      float: left;
+      height: 33px;
+      overflow: hidden;
+      &:hover {
+        border-color: $white;
+      }
+      img {
+        border: 0;
+      }
+    }
+  }
+  li {
+    display: block;
+    float: left;
+    margin: 0 5px 0 0;
+    padding: 0;
+    &.selected a {
+      border-color: $white;
+    }
+    &.default a {
+      background: $url_31 0 0 no-repeat;
+      display: block;
+      height: 33px;
+      width: 50px;
+      img {
+        display: none;
+      }
+    }
+  }
+  .pp_arrow_previous {
+    margin-top: 7px !important;
+  }
+  .pp_arrow_next {
+    margin-top: 7px !important;
+  }
+}
+.pp_bottom {
+  height: 20px;
+  position: relative;
+  .pp_left {
+    height: 20px;
+    left: 0;
+    position: absolute;
+    width: 20px;
+  }
+  .pp_middle {
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    right: 20px;
+  }
+  .pp_right {
+    height: 20px;
+    left: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20px;
+  }
+}
+.pp_loaderIcon {
+  display: block;
+  height: 24px;
+  left: 50%;
+  margin: -12px 0 0 -12px;
+  position: absolute;
+  top: 50%;
+  width: 24px;
+}
+#pp_full_res {
+  line-height: 1 !important;
+  .pp_inline {
+    text-align: left;
+    p {
+      margin: 0 0 15px 0;
+    }
+  }
+}
+* html {
+  .pp_top {
+    padding: 0 20px;
+    .pp_middle {
+      left: 0;
+      position: static;
+    }
+  }
+  .pp_content {
+    width: 40px;
+  }
+  .pp_bottom {
+    padding: 0 20px;
+    .pp_middle {
+      left: 0;
+      position: static;
+    }
+  }
+}

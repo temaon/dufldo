@@ -1,0 +1,14 @@
+- if post.documents.present?
+  %li.menu-item.menu-item-type-custom.menu-item-object-custom
+    = link_to 'Регламент', post.slug_path(:documents)
+- if post.results.present?
+  %li.menu-item.menu-item-type-custom.menu-item-object-custom
+    = link_to 'Таблица результатов', post.slug_path(:standings)
+- if post.teams.present?
+  %li.menu-item.menu-item-type-custom.menu-item-object-custom
+    = link_to 'Команды', post.slug_path(:teams)
+- if post.rounds.present?
+  %li.menu-item.menu-item-type-custom.menu-item-object-custom
+    = link_to 'Календарь', post.slug_path(:calendar)
+%li.menu-item.menu-item-type-custom.menu-item-object-custom
+  = link_to 'Комментарии', post.slug_path(:comments_list)

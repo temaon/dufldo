@@ -1,0 +1,19 @@
+.themeum-title
+  .themeum-title-icon
+    %span.icon-bar
+    %span.icon-bar
+    %span.icon-bar
+  %h2{:style => 'color:#000000;font-size:24px;margin-bottom:30px;padding:0px 0px 0px 0px;font-weight:700;'}
+    %span
+      %span Топ 10
+      %strong Игроков
+#carousel-player.carousel.slide{"data-ride" => "carousel"}
+  .carousel-inner
+    = render partial: 'home/top_players/player', collection: players, as: :player
+    .player-carousel-control
+      = link_to '#carousel-player', data: {slide: :prev}, role: :button, class: :left do
+        %i.fa.fa-angle-left
+      = link_to '#carousel-player', data: {slide: :next}, role: :next, class: :right do
+        %i.fa.fa-angle-right
+:javascript
+  jQuery(document).ready(function() { jQuery('#carousel-player').carousel({ interval: false }) });

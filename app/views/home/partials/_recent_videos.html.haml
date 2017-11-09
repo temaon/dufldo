@@ -1,0 +1,11 @@
+.themeum-title
+  .themeum-title-icon
+    %span.icon-bar
+    %span.icon-bar
+    %span.icon-bar
+  %h2{style: 'color:#000000;font-size:24px;margin-bottom:30px;padding:0px 0px 0px 0px;font-weight:700;'}
+    %span
+      %span Последние
+      %strong Видео
+.themeum-video-post.themeum-default-ul
+  = render partial: 'home/videos/item', collection: videos, as: :video

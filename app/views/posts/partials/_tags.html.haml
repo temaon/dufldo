@@ -1,0 +1,12 @@
+- if tags.present?
+  #tag_cloud-2.widget.widget_tag_cloud
+    .themeum-title
+      .themeum-title-icon
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %h2.widget_title
+        %span Список
+        %strong Тегов
+    .tagcloud
+      = render partial: 'news/partials/tag', collection: tags, as: :tag

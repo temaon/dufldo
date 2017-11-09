@@ -1,0 +1,12 @@
+- if categories.present?
+  #categories-2.widget.widget_categories
+    .themeum-title
+      .themeum-title-icon
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %h2.widget_title
+        %span Список
+        %strong Категорий
+    %ul
+      = render partial: 'news/partials/category_item', collection: categories, as: :category

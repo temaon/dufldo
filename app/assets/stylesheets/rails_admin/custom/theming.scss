@@ -1,0 +1,14 @@
+[class^="icon-"],
+[class*=" icon-"] {
+  @extend .fa !optional;
+}
+
+.icon-futbol             { @extend .fa-futbol-o !optional; }
+.icon-news             { @extend .fa-newspaper-o !optional; }
+.icon-users             { @extend .fa-users !optional; }
+.icon-trophy            { @extend .fa-trophy !optional; }
+.icon-tv            { @extend .fa-tv !optional; }
+.icon-list-ol            { @extend .fa-list-ol !optional; }
+.icon-gamepad            { @extend .fa-gamepad !optional; }
+.icon-chart            { @extend .fa-bar-chart !optional; }
+.icon-hand            { @extend .fa-hand-paper-o !optional; }

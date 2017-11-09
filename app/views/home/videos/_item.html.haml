@@ -1,0 +1,7 @@
+.themeum-video-post-item
+  .themeum-default-wrapper.themeum-video-post-wrapper.themeum-overlay-wrap.yes
+    .video-block
+      .frame.img-responsive.wp-post-image{style: "background: url(#{video.url_thumb}) center no-repeat; background-size: cover; height: 100%;"}
+      = link_to '' , video.assetable.decorate.slug_path, class: %i(link-video themeum-overlay-inner)
+      = link_to video.assetable.decorate.try(:title).to_s , video.assetable.decorate.slug_path, class: %i(themeum-overlay-inner link-video-post)
+      %iframe{allowfullscreen: '', frameborder: 0, height: '100%', src: video.video_player, width: '100%', id: "player_#{video.id}"}

@@ -1,0 +1,29 @@
+%section#main
+  .sub-title{style: "background-image:url(#{image_path('default_background.jpg')});background-size: cover;background-position: 50% 50%;padding: 100px 0 90px;"}
+    .container
+      .sub-title-inner
+        %h2
+          = "Поиск #{params[:searching_params]}"
+  .container
+    .row
+      #sidebar_news.col-md-8{role: :complementary}
+        .sidebar-inner
+          %aside.widget-area
+            .themeum-title
+              .themeum-title-icon
+                %span.icon-bar
+                %span.icon-bar
+                %span.icon-bar
+              %h2.widget_title
+                %span Результаты по запросу:
+                %strong
+                  = params[:searching_params]
+            #themeum_popular_posts_widget-3.widget.widget_themeum_popular_posts_widget.row-padding-v-20
+              - if items.present?
+                = render partial: 'search/item_post', collection: items.map {|item| item.decorate}, as: :item
+              - else
+                = render 'partials/nothing_found'
+        = paginate items, url_new: search_path(searching_params: params[:searching_params]), window: 8
+      #sidebar.col-sm-4{role: :main}
+        %aside.widget-area
+          = render partial: 'news/partials/popular_news', locals: {news: popular_news}

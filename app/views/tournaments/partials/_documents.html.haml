@@ -1,0 +1,11 @@
+#documents.tab-pane.fade{role: :tabpanel}
+  .fixture-teams.col-md-12
+    .point-table.table-responsive
+      %table.table.table-striped
+        %thead.point-table-head
+          %tr
+            %th.text-left Документ
+            %th.text-left Действие
+          %tbody
+            = render partial: 'tournaments/partials/show/regulation', collection: regulations, as: :regulation
+            = render partial: 'tournaments/partials/show/document', collection: documents, as: :document

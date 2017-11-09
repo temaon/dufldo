@@ -1,0 +1,3 @@
+class AccountDecorator < UserDecorator
+
+end

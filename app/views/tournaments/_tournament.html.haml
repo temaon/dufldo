@@ -1,0 +1,16 @@
+%article.status-publish.format-standard.has-post-thumbnail.hentry
+  = link_to tournament.slug_path do
+    .featured-wrap{style: "background-image:url(#{image_url(tournament.main_image)});"}
+
+  .entry-content-wrap
+    .row
+      .entry-headder.col-sm-9
+        .entry-title-wrap
+          %h2.entry-title.blog-entry-title
+            = link_to tournament.title, tournament.slug_path
+      = render partial: 'tournaments/partials/info', locals: {tournament: tournament}
+    .clearfix
+    -#.entry-summary.clearfix
+    -#  = tournament.short_description
+    %p
+      = link_to 'Читать далее...', tournament.slug_path, class: %i(btn btn-style)

@@ -1,0 +1,361 @@
+//colors
+$white: #fff;
+$black_85: rgba(0,0,0,.85);
+$color_tide_approx: #bba;
+$color_suva_gray_approx: #888;
+$color_woodsmoke_approx: #111;
+
+//@extend-elements
+//original selectors
+//.latest-team .latest-team-a, .latest-team .latest-team-b
+%extend_1 {
+
+}
+
+
+.nano {
+  background: $color_tide_approx;
+  .nano-content {
+    padding: 10px;
+  }
+  .nano-pane {
+    background: $color_suva_gray_approx;
+  }
+  .nano-slider {
+    background: $color_woodsmoke_approx;
+  }
+}
+@media(min-width: 961px) and(max-width: 1199px) {
+  .boxwidth {
+    max-width: 100%;
+    #masthead.sticky {
+      max-width: 100%;
+    }
+  }
+  .latest-team {
+    .latest-team-a {
+      font-size: 16px;
+      &:after {
+        border-width: 31px 38px 18px 20px;
+      }
+    }
+    .latest-team-b {
+      font-size: 16px;
+      &:before {
+        border-width: 29px 35px 20px 23px;
+      }
+    }
+  }
+  #main-menu .nav > li > a {
+    padding: 0 7px;
+  }
+  .matech-team .title h4 {
+    font-size: 32px;
+  }
+}
+@media(min-width: 768px) and(max-width: 960px) {
+  .boxwidth {
+    max-width: 100%;
+    #masthead.sticky {
+      max-width: 100%;
+    }
+  }
+  #main-menu {
+    padding: 0;
+    text-align: center;
+    .nav {
+      display: inline-block;
+      > li {
+        > a {
+          padding: 0 7px;
+        }
+        > ul li a {
+          font-size: 12px;
+        }
+      }
+    }
+    .sub-menu li a {
+      text-align: left;
+    }
+  }
+  .latest-team {
+    .latest-team-a {
+      font-size: 18px;
+      padding: 22px 0 15px 20px;
+    }
+    .latest-team-b {
+      font-size: 18px;
+      padding: 22px 20px 15px 0;
+    }
+  }
+  .footer-wrap-inner {
+    background: none;
+  }
+  .thm-footer-1-inner {
+    margin-bottom: 40px;
+  }
+  .match-detail-league-title {
+    margin-top: 80px;
+    font-size: 15px;
+  }
+  .match-team-inner {
+    .right {
+      margin-left: 16px;
+    }
+    .left {
+      margin-right: 16px;
+    }
+    h4 {
+      font-size: 13px;
+    }
+  }
+  #navigation .navbar-nav > li > a {
+    padding: 40px 10px !important;
+  }
+  .navbar-brand > img {
+    margin-top: 20px;
+  }
+  .popular-image img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .popular-news-style2-item .media > .pull-left {
+    float: none !important;
+  }
+  .matech-team .title h4 {
+    font-size: 20px;
+  }
+  .match-banner .score.league {
+    line-height: 50px;
+    margin-top: 20px;
+  }
+}
+@media(max-width: 767px) {
+  #navigation {
+    .navbar-nav {
+      float: none;
+      margin: 0;
+      > li > a {
+        padding: 10px 15px !important;
+      }
+    }
+    &.navbar {
+      padding: 0;
+    }
+    .navbar-brand {
+      padding-top: 3px;
+      padding-bottom: 0;
+      margin-left: 0;
+    }
+    .woocommerce.widget_shopping_cart {
+      right: auto;
+      left: 0;
+      top: 35px;
+    }
+  }
+  .secondary-menu-wrap {
+    background: $black_85;
+  }
+  .slider2-score {
+    font-size: 30px;
+  }
+  .slider2-time {
+    line-height: 24px;
+  }
+  .slider2-box {
+    height: 170px;
+  }
+  .slider2-carousel-indicators {
+    .container .slider2-carousel-indicators-inner {
+      display: none;
+    }
+    .nano .nano-pane {
+      display: none;
+    }
+  }
+  .latest-team {
+    .latest-team-a {
+      line-height: 28px;
+      display: block;
+      margin: 20px 0;
+      &:after {
+        display: none;
+      }
+    }
+    .latest-team-b {
+      line-height: 28px;
+      display: block;
+      margin: 20px 0;
+      &:before {
+        display: none;
+      }
+    }
+  }
+  .themeum-poll {
+    margin-bottom: 30px;
+  }
+  .footer-wrap-inner {
+    background: none;
+  }
+  .thm-footer-1-inner {
+    margin-bottom: 40px;
+  }
+  .matech-team-left {
+    text-align: center;
+  }
+  .matech-team-right {
+    text-align: center;
+  }
+  .matech-team {
+    &.pull-right {
+      float: none !important;
+    }
+    &.pull-left {
+      float: none !important;
+    }
+  }
+  .match-goal-info {
+    .pull-left {
+      float: none !important;
+      text-align: center;
+    }
+    .pull-right {
+      float: none !important;
+      text-align: center;
+    }
+    .text-center {
+      padding: 30px 0;
+    }
+  }
+  .match-detail-league-title {
+    margin-top: 80px;
+    font-size: 15px;
+  }
+  .matech-details-team {
+    .pull-left {
+      padding-right: 30px;
+    }
+    .pull-right {
+      padding-left: 30px;
+    }
+  }
+  .match-status-info {
+    padding: 0;
+  }
+  .match-teams {
+    padding: 0;
+  }
+  .team-overlay {
+    margin: 20px 0;
+    .player-overlay {
+      left: 35px;
+    }
+    .player-overlay-right {
+      left: auto;
+      right: 35px;
+    }
+  }
+  .league-banner {
+    text-align: center;
+  }
+  .match-details-inner {
+    padding: 60px 0;
+  }
+  #sign-form .modal-body form {
+    width: 100%;
+  }
+  .navbar-toggle .icon-bar {
+    background: $white;
+  }
+  #header-container #navigation {
+    position: relative;
+  }
+  #menu-secondary-menu.navbar-nav {
+    margin: inherit;
+    > li {
+      display: inline-block;
+      > a {
+        line-height: 42px;
+        min-height: 42px;
+      }
+    }
+  }
+  .home-search form {
+    input {
+      height: 50px;
+      line-height: 50px;
+    }
+    &#searchform i {
+      top: 14px;
+      right: 10px;
+    }
+  }
+  #home-countdown-timer > div {
+    margin: 0 10px 0 0;
+    &.next-match-count {
+      margin: 0 15px 0 0;
+    }
+  }
+  .themeum-latest-match .latest-team {
+    text-align: center;
+  }
+  .themeum-breaking-news .carousel-inner h3 {
+    line-height: 28px;
+    margin: 12px 0;
+  }
+  .highlights-wrapper img {
+    width: 100%;
+  }
+  .highlights-style2-item img {
+    width: 100%;
+  }
+  .themeum-featured-item img {
+    width: 100%;
+  }
+  .player-inner img {
+    width: 100%;
+  }
+  .goal-count.media {
+    .text-right {
+      text-align: center;
+    }
+    .pull-right {
+      float: none !important;
+    }
+    .pull-left {
+      float: none !important;
+    }
+  }
+  .match-banner .score {
+    margin: 30px 0;
+  }
+  .goal-timeline .timeline-titme {
+    margin: 0 3px;
+  }
+  .nav-tabs.match-details-tab-nav > li > a {
+    margin-right: 12px;
+    font-size: 12px;
+  }
+  .match-status-list .status {
+    font-size: 14px;
+  }
+  .match-details-tab-nav > li {
+    float: none;
+    margin-bottom: 15px;
+  }
+  .result-list .fixture-team-inner .status {
+    line-height: 24px;
+  }
+  .themeum-overlay-wrap.yes img {
+    width: 100%;
+  }
+  .themeum-video-post-wrapper-style2 img {
+    width: 100%;
+  }
+  .player-profile-rightside h3 {
+    margin-top: 30px;
+  }
+  .all-items.col-xs-12 {
+    margin-bottom: 30px;
+  }
+}

@@ -1,0 +1,6 @@
+.media
+  .pull-left
+    = link_to item.slug_path do
+      = image_tag item.main_image(:thumb), class: %i(img-responsive wp-post-image), width: 175, height: 150, alt: item.title
+  .media-body
+    = link_to item.title, item.slug_path

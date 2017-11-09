@@ -1,0 +1,3 @@
+.col-sm-4
+  = link_to image.url,  data: {rel: 'prettyPhoto[pp_gal]'} do
+    = image_tag image.url(:medium), class: %i(img-responsive), alt: image.url

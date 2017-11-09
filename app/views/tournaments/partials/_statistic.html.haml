@@ -1,0 +1,11 @@
+- if statistic.present?
+  #statistic.tab-pane.fade{role: :tabpanel}
+    .fixture-teams
+      .fixture-teams-list.result-list.col-md-12
+        - statistic.each do |item|
+          .row
+            %h3.fixture-title
+              = item[:title]
+          .row
+            != item[:content]
+            .entry-summary

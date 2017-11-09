@@ -1,0 +1,18 @@
+-#%a{:href => "http://demo.themeum.com/wordpress/wpsoccer/fixture_reasult/barcelona-vs-atletico-madrid/"}
+- if game.home_team(true).present? && game.guest_team(true).present?
+  .row.fixture-team-inner.clearfix
+    = link_to game.home_team.slug_path do
+      .col-xs-4.col-sm-4.paddingleft
+        = image_tag game.home_team.logo, class: %i(pull-left), alt: game.home_team.name, width: 40
+        %h4
+          = game.home_team.name
+    .col-xs-4.col-sm-4.status.text-center
+      = game.get_results
+      %span.match-date
+        = game.formatted_date
+        -#31 Oct 2019 12:00 AM GMT 6+
+    = link_to game.guest_team.slug_path do
+      .col-xs-4.col-sm-4.text-right
+        = image_tag game.guest_team.logo, class: %i(pull-right), alt: game.home_team.name, width: 40
+        %h4
+          = game.guest_team.name

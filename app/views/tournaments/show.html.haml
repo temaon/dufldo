@@ -1,0 +1,45 @@
+%section#main
+  .sub-title{style: "background-image:url(#{tournament.main_image});background-size: cover; background-position: 50% 50%; padding: 100px 0 55px;"}
+    .container
+      .sub-title-inner.pull-right
+        %h2
+          = tournament.title
+  .match-details
+    .container
+      .match-details-inner
+        .match-details-tab{role: :tabpanel}
+          / Nav tabs
+          .fixture-middles.text-center
+            %h3
+              = tournament.title
+          = render 'tournaments/partials/show/nav_tabs', tournament: tournament
+          / Tab panes
+          .tab-content.match-details-tab-content
+            = render partial: 'tournaments/partials/show/main_info', locals: {tournament: tournament}
+            = render partial: 'tournaments/partials/documents', locals: {documents: tournament.documents, regulations: tournament.regulations}
+            = render partial: 'tournaments/partials/statistic', locals: {statistic: tournament.statistics}
+            #standings.tab-pane.fade{role: :tabpanel}
+              .fixture-teams.col-md-12
+                .point-table.table-responsive
+                  %table.table.table-striped
+                    = tournament.results.each_slice(8) do |results|
+                      = render partial: 'tournaments/partials/teams_position', locals: {results: results}
+            #teams.tab-pane.fade{role: :tabpanel}
+              .fixture-teams
+                .fixture-teams-list.result-list
+                  .row
+                    %h3.fixture-title
+                      = 'Список команд'
+                  - tournament.teams.decorate.each_slice(2) do |item|
+                    .row.fixture-team-inner.clearfix
+                      = render partial: 'tournaments/partials/show/team', collection: item, as: :team
+            #calendar.tab-pane.fade{role: :tabpanel}
+              .fixture-teams
+                .fixture-teams-list.result-list.col-md-12
+                  .row.fixture-team-inner.clearfix
+                    = render partial: 'tournaments/partials/show/calendar_item', collection: tournament.rounds, as: :round
+            #comments_list.tab-pane.fade{role: :tabpanel}
+              .fixture-teams
+                .fixture-teams-list.result-list.col-md-12
+                  .row.fixture-team-inner.clearfix
+                    = commontator_thread(tournament)

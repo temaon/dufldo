@@ -1,0 +1,20 @@
+%article.status-publish.format-standard.has-post-thumbnail.hentry
+  = link_to item.slug_path do
+    - if item.has_video?
+      .video-section.featured-wrap
+        .frame.themeum-overlay-wrap.yes{style: "background: url(#{image_url(item.second_image)}) center no-repeat; background-size: cover"}
+        = link_to 'Смотреть видео', '#', class: %i(link-video)
+        = render partial: 'partials/socials/shared', locals: {url: item.slug_url}
+        %iframe{allowfullscreen: '', frameborder: 0, height: '100%', src: item.get_video, width: '100%'}
+
+  .entry-content-wrap
+    .row
+      .entry-headder.col-sm-9
+        .entry-title-wrap
+          %h2.entry-title.blog-entry-title
+            = link_to item.name, item.slug_path
+    .clearfix
+    .entry-summary.clearfix
+      = item.short_description
+    %p
+      = link_to 'Читать далее...', item.slug_path, class: %i(btn btn-style)

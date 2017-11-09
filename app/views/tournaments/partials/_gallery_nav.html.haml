@@ -1,0 +1,5 @@
+- if gallery.present?
+  #flexCarousel.gallery-controll-thumb.flexslider
+    .flex-viewport{style: 'overflow: hidden; position: relative;'}
+      %ul.slides.gallery-thumb-image
+        = render partial: 'news/partials/gallery_item', collection: gallery, as: :image

@@ -1,0 +1,9 @@
+%li.menu-item.menu-item-type-custom.menu-item-object-custom{class: (category.children.present? || category.posts.present?) ? %i(menu-item-has-children has-menu-child) : nil}
+  = link_to category.name, category.slug_path
+  %ul.sub-menu{role: :menu}
+    - if category.posts.present? && category.posts.size == 1
+      = render partial: 'layouts/partials/tournament_sub_menu', locals: {post: category.posts.first.decorate}
+    - if category.posts.present? && category.posts.size > 1
+      = render partial: 'tournament_categories/tournament_item', collection: category.posts.decorate, as: :post
+    - if category.children.present?
+      = render partial: 'tournament_categories/tournament_category', collection: category.children.decorate, as: :category

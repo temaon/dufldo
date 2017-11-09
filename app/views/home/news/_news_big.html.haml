@@ -1,0 +1,14 @@
+.row
+  .highlights-item.big-block.col-sm-12
+    .themeum-default-wrapper.highlights-wrapper.themeum-overlay-wrap.yes
+      = link_to news.slug_path do
+        = image_tag news.main_image(:medium), class: %i(img-responsive wp-post-image), height: 500, width: 460
+      .themeum-default-intro.highlights-intro.themeum-overlay
+        .themeum-overlay-inner
+          - if news.category.present?
+            %span.entry-category
+              = link_to news.category.name, news.category.decorate.slug_path
+          %h3.entry-title
+            = link_to news.title, news.slug_path
+          %span.entry-date
+            = news.formatted_date(:long)

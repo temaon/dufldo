@@ -1,0 +1,14 @@
+.share-btn
+  %i.fa.fa-share
+  .share-btn-pop{style: 'display:none'}
+    .social-button
+      %ul
+        %li
+          = link_to "http://www.facebook.com/sharer.php?u=#{url}", class: :facebook do
+            %i.fa.fa-facebook
+        %li
+          = link_to "http://twitter.com/share?url=#{url}", class: :twitter do
+            %i.fa.fa-twitter
+        %li
+          = link_to "https://plus.google.com/share?url=#{url}", class: %i(g-puls) do
+            %i.fa.fa-google-plus

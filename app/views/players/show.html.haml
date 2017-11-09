@@ -1,0 +1,73 @@
+%section#main.clearfix
+  .player-profile-banner.sub-title{:style => "background-image:url(http://demo.themeum.com/wordpress/wpsoccer/wp-content/uploads/2015/05/banner3.jpg);background-size: cover;background-position: 50% 50%;padding:100px 0 50px"}
+    .container
+      %h2.player-profile-title
+        = player.name
+  .player-profile
+    .container
+      .player-profile-inner
+        .row
+          #post-817.post-817.player.type-player.status-publish.has-post-thumbnail.hentry
+            .col-sm-4
+              .player-profile-leftside
+                - if player.main_image(:gallery).present?
+                  = image_tag player.main_image(:gallery), class: %i(img-responsive), alt: player.name
+                - if  player.name.present?
+                  %h3
+                    = player.name
+                - if player.position.present?
+                  %span
+                    = player.position
+                - if player.birthday.present?
+                  %h4 Дата рождения
+                  %span
+                    = player.birthday
+                - if player.place.present?
+                  %h4 Место рождения
+                  %span
+                    = player.place
+                %h4 Рост
+                %span
+                  = player.height + ' cm'
+                %h4 Вес
+                %span
+                  = player.weight + ' kg'
+            / player-profile-leftside
+            / col-sm-4
+            .col-sm-8
+              .player-profile-rightside
+                .media
+                  .pull-right
+                    = image_tag player.team_logo, alt: player.team_name
+                    %h3
+                      = player.past_matches_count
+                    %span Матчей сыграно
+                  .media-body.player-career
+                    %h3 Карьера
+                    %ul
+                      %li.clearfix
+                        %span Матчи:
+                        %span.pull-right
+                          = player.past_matches_count.to_i
+                      %li.clearfix
+                        %span Голы:
+                        %span.pull-right
+                          = player.goals_count.to_i
+                      -#%li.clearfix
+                      -#  %span Discipline:
+                      -#  %span.pull-right 3 fouls against
+                      -#%li.clearfix
+                      -#  %span Passing:
+                      -#  %span.pull-right 45 free kicks
+                      %li.clearfix
+                        %span Команда:
+                        %span.pull-right
+                          = player.team_name
+                      -#%li.clearfix
+                      -#  %span Club Debut:
+                      -#  %span.pull-right March 24, 2009
+                      -#%li.clearfix
+                      -#  %span Previous Club:
+                      -#  %span.pull-right Nutella United
+                %h3 Обзор игрока
+                != player.description

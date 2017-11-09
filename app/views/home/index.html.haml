@@ -1,0 +1,61 @@
+%section#main
+  #content.site-content{role: :main}
+    #page.type-page.status-publish.hentry
+      .wpb_column.vc_column_container.vc_col-sm-12
+        = render partial: 'home/partials/main_banner', locals: {banner: main_banner}
+        = render partial: 'home/partials/latest_news', locals: {news: latest_news}
+        .wpb_wrapper.main_container
+          .container.row-padding-v-10.content_holder
+            .row-no-padding.row
+              .container.col-sm-4
+                .vc_column-inner
+                  .wpb_wrapper
+                    = render partial: 'home/partials/recent_videos', locals: {videos: videos} if videos.present?
+                    -#= render partial: 'home/partials/top_players', locals: {players: top_players} if top_players.present?
+                    = render partial: 'home/partials/small_banner', collection: left_banners, as: :banner if left_banners.present?
+              .col-sm-5
+                = render partial: 'home/partials/latest_news_preview', locals: {news: latest_news} if latest_news.present?
+                = render partial: 'home/partials/latest_tournaments', locals: {tournaments: tournaments} if tournaments.present?
+              .container.col-sm-3
+                .vc_column-inner
+                  .wpb_wrapper
+                    = render partial: 'home/partials/recent_result_games', locals: {tournaments: recent_results} if recent_results.present?
+                .vc_empty_space{style: 'height: 10px'}
+                  %span.vc_empty_space_inner
+                .vc_column-inner
+                  .wpb_wrapper
+                    = render partial: 'home/partials/future_games', locals: {tournaments: future_games} if future_games.present?
+                    .vc_empty_space{style: 'height: 10px'}
+                      %span.vc_empty_space_inner
+                    = render partial: 'home/partials/clubs_runking', locals: {tournaments: main_tournaments} if main_tournaments.present?
+                    .wpb_single_image.wpb_content_element.vc_align_left
+                      = render partial: 'home/partials/small_banner', collection: right_banners, as: :banner if right_banners.present?
+                    .vc_empty_space{style: 'height: 30px'}
+                    .themeum-title.themeum-title-black
+                      .themeum-title-icon
+                        %span.icon-bar
+                        %span.icon-bar
+                        %span.icon-bar
+                      %h2{style: 'color:#ffffff;background-color:#000000;font-size:24px;margin-bottom:12px;padding:12px 0px 12px 0px;font-weight:700;'}
+                        %span
+                          %span Присоединяйтесь
+                    .themeum-social-button
+                      %ul.list-unstyled
+                        %li
+                          = link_to '#', target: :_blank do
+                            %i.fa.fa-vk
+                            Vkontakte
+                        %li
+                          = link_to '#', target: :_blank do
+                            %i.fa.fa-youtube
+                            Youtube
+                        %li
+                          = link_to '#', target: :_blank do
+                            %i.fa.fa-google-plus-square
+                            Google+
+                        %li
+                          = link_to '#', target: :_blank do
+                            %i.fa.fa-facebook
+                            Facebook
+                    .vc_empty_space{style: 'height: 30px'}
+                      %span.vc_empty_space_inner

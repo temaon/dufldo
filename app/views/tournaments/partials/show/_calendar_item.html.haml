@@ -1,0 +1,3 @@
+%h3.fixture-title
+  = round.formatted_title
+= render partial: 'tournaments/partials/show/game_item', collection: round.games.decorate, as: :game

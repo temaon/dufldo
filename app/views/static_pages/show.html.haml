@@ -1,0 +1,14 @@
+%section#main
+  .sub-title{style: "background-image:url(#{image_url(object.main_image.to_s)});background-size: cover;background-position: 50% 50%;padding: 110px 0 50px;"}
+    .container
+      .sub-title-inner.pull-right
+        %h2
+          = object.name
+  .container
+    .row
+      #content.site-content.col-md-8{role: :main}
+        #posts_container
+          - if object.has_nesting
+            = render partial: 'static_pages/content_with_posts', locals: {page: object}
+          - else
+            = render partial: 'static_pages/content', locals: {page: object}

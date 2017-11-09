@@ -1,0 +1,4 @@
+$('#posts_container').html("<%= escape_javascript( render posts.present? ? posts.decorate : 'partials/nothing_found') %>");
+$('#posts_pagination').html("<%= escape_javascript(paginate(posts, url_new: object.slug_path, window: 8)) %>");
+
+

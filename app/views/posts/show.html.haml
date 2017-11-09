@@ -1,0 +1,25 @@
+%section#main
+  .sub-title{style: "background-image: url(#{image_url(post.main_image)});background-size: cover; background-position: 50% 50%; padding: 100px 0 55px;"}
+    .container
+      .sub-title-inner.pull-right
+        %h2
+          = post.name
+  .container
+    .row
+      #content.site-content.col-md-8{role: :main}
+        %article.status-publish.format-standard.has-post-thumbnail.hentry
+          .entry-content-wrap.no-padding-top
+            .clearfix
+              = render partial: 'news/partials/gallery', locals: {gallery: post.images}
+              = render partial: 'news/partials/gallery_nav', locals: {gallery: post.images}
+            .entry-summary.clearfix
+              != post.description
+            .entry-summary.clearfix
+              .comments#comments
+                = commontator_thread(post)
+      #sidebar.col-sm-4{role: :complementary}
+        %aside.widget-area
+          = render partial: 'news/partials/popular_news', locals: {news: popular_news}
+          = render partial: 'news/partials/tags', locals: {tags: tags}
+          = render partial: 'news/partials/categories_list', locals: {categories: categories}
+

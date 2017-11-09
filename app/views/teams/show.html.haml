@@ -1,0 +1,12 @@
+%section#main
+  .player-profile-banner{style: "background-image:url(#{team.main_image});background-size: cover;background-position: 50% 50%;padding: 110px 0 50px;"}
+    .container
+      %h2.player-profile-title
+        = team.name
+  .club-profile
+    .container
+      .club-profile-inner
+        .row
+          .club{class: %i(type-club status-publish has-post-thumbnail hentry)}
+            = render partial: 'teams/partials/left_sidebar', locals: {team: team}
+            = render partial: 'teams/partials/main_content', locals: {team: team}

@@ -1,0 +1,22 @@
+%section#main
+  .sub-title{style: "background-image:url(#{image_path('')});background-size: cover;background-position: 50% 50%;padding: 110px 0 50px;"}
+    .container
+      .sub-title-inner
+        %h2
+          = "Поиск #{params[:searching_params]}"
+  .container
+    .row
+      #sidebar.col-md-4{role: :complementary}
+        .sidebar-inner
+          %aside.widget-area
+            .themeum-title
+              .themeum-title-icon
+                %span.icon-bar
+                %span.icon-bar
+                %span.icon-bar
+              %h2.widget_title
+                %span Результаты
+                %strong
+                  = params[:searching_params]
+            #themeum_popular_posts_widget-3.widget.widget_themeum_popular_posts_widget
+              = render partial: 'search/item_post', collection: items, as: :item

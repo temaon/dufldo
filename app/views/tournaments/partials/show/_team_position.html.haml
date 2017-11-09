@@ -1,0 +1,23 @@
+- if result.team_decorate.present?
+  %tr
+    %td.text-left
+      = result.place
+    %td.text-left
+      = link_to result.team_decorate.slug_path do
+        = image_tag result.team_decorate.logo, class: %i(point-table-image), alt: result.team.name
+        %span
+          = result.team.name
+    %td
+      = result.count_games
+    %td
+      = result.count_wins
+    %td
+      = result.count_draws
+    %td
+      = result.count_losings
+    %td
+      = result.goals_balls
+    %td
+      = result.missed_balls
+    %td
+      = result.score

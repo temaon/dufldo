@@ -1,0 +1,11 @@
+.themeum-player.item{class: (player_counter == 1) ? :active : nil}
+  .player-inner.clearfix
+    .themeum-overlay-wrap.yes
+      = link_to player.slug_path do
+        = image_tag player.main_image, alt: player.name
+    .themeum-overlay-inner
+      .player-inside.clearfix
+        %h4.player-name
+          = link_to player.name, player.slug_path
+        %span.player-position
+          = player.position

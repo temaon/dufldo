@@ -1,0 +1,6 @@
+- if gallery.present?
+  .themeum-gallery
+    #postSlider.gallery-controll.flexslider
+      .flex-viewport{style: 'overflow: hidden; position: relative;'}
+        %ul.slides{style: 'width: 1800%; transition-duration: 0s; transform: translate3d(-6000px, 0px, 0px);'}
+          = render partial: 'news/partials/image', collection: gallery, as: :image

@@ -1,0 +1,14 @@
+.popular-item.all-items
+  .popular-news-wrapper.popular-items-wrap.clearfix
+    .popular-image.col-md-5.col-sm-12.col-xs-4
+      .themeum-overlay-wrap.yes
+        = link_to tournament.slug_path do
+          = image_tag tournament.main_image(:medium), class: %i(img-responsive wp-post-image), style: 'width:100%'
+    .popular-news-intro.col-md-7.col-sm-12.col-xs-8
+      - if tournament.category.present?
+        %span.entry-category
+          = link_to tournament.category.name, tournament.category.decorate.slug_path
+      %h3.entry-title
+        = link_to tournament.title, tournament.slug_path
+      %span.entry-date
+        = tournament.formatted_date

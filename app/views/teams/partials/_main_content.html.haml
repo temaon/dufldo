@@ -1,0 +1,27 @@
+.col-sm-9
+  .player-profile-rightside
+    %h3 Описание
+    .description
+      != team.description
+    .club-details-tab{role: :tabpanel}
+      / Nav tabs
+      %ul.nav.nav-tabs.club-details-tab-nav{role: :tablist}
+        %li.active{role: :presentation}
+          = link_to 'Состав', '#squed', aria: {controls: :squed, expanded: true}, data: {toggle: :tab}, role: :tab
+          -#%a{aria: {controls: :squed, expanded: true}, data: {toggle: :tab}, :href => "#squed", role: :tab} Состав
+        %li{role: :presentation}
+          = link_to 'Галерея', '#photos', aria: {controls: :photos, expanded: true}, data: {toggle: :tab}, role: :tab
+          -#%a{"aria-controls" => "photos", "aria-expanded" => "false", "data-toggle" => "tab", :href => "#photos", :role => "tab"} Галерея
+      / Tab panes
+      .tab-content.club-details-tab-content
+        #squed.tab-pane.fade.active.in{role: :tabpanel}
+          .club-squed
+            = render partial: 'teams/partials/player', collection: team.players.decorate, as: :player
+        / club-squed
+        / squed
+        #photos.tab-pane.fade{role: :tabpanel}
+          .club-phots
+            - team.images.try(:each_slice, 3) do |item|
+              .row
+                = render partial: 'teams/partials/pretty_photo', collection: item, as: :image
+

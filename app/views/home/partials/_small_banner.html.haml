@@ -1,0 +1,5 @@
+.vc_empty_space{style: 'height: 30px'}
+  %span.vc_empty_space_inner
+%figure.wpb_wrapper.vc_figure
+  = link_to banner.url, class: %i(vc_single_image-wrapper vc_box_border_grey), target: :_blank do
+    .vc_single_image-img.attachment-full{style: "background-image:url(#{image_url(banner.main_image.to_s)});background-size: cover;background-position: 50% 50%;width: 100%; height: 232px; display:block"}

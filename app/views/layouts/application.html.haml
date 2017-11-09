@@ -1,0 +1,32 @@
+!!!
+%html
+  %head
+    %meta{charset: 'utf-8'}
+    %meta{name: :viewport, content: 'width=device-width, user-scalable=no, initial-scale=1.0'}
+    %meta{name: 'turbolinks-root', content: '/'}
+    = yield(:javascript_before)
+    = yield(:stylesheet_before)
+    = stylesheet_link_tag 'lib/preloader', media: :all
+    = javascript_include_tag 'lib/loader'
+    :coffeescript
+      document.addEventListener('DOMContentLoaded', () ->
+        window.__loader = new Loader()
+      )
+    = stylesheet_link_tag :application, media: :all, data: {'turbolinks-track': :reload}
+    = stylesheet_link_tag controller_css, media: :all, data: {'turbolinks-track': :reload} if asset_exists? controller_css
+    = javascript_include_tag :application, data: {'turbolinks-track': :reload}
+    = javascript_include_tag controller_js, data: {'turbolinks-track': :reload} if asset_exists? controller_js
+    = csrf_meta_tags
+  %body.main_section
+    .hfeed.site.fullwidth#page
+      #header-holder
+        = render partial: 'layouts/partials/header'
+        = render partial: 'layouts/partials/secondary_menu'
+      = yield(:header) if content_for?(:header)
+      = content_for?(:main_content) ? yield(:main_content) : yield
+      = render partial: 'layouts/partials/footer'
+      = yield(:footer) if content_for?(:footer)
+    = yield(:stylesheet_after) if content_for?(:stylesheet_after)
+    = yield(:javascript_after) if content_for?(:javascript_after)
+:coffeescript
+  $ ->

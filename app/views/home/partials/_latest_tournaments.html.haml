@@ -1,0 +1,13 @@
+- if tournaments.present?
+  .themeum-title
+    .themeum-title-icon
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    %h2{style: 'color:#000000;font-size:24px;margin-bottom:30px;padding:0px 0px 0px 0px;font-weight:700;'}
+      %span Последние
+      %strong Турниры
+    .highlights.themeum-default-ul.popular-items-wrap
+      .row
+        = render partial: 'home/tournaments/tournament_big', locals: {tournament: tournaments.shift}
+        = render partial: 'home/tournaments/tournament_small', collection: tournaments, as: :tournament

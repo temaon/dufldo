@@ -1,0 +1,10 @@
+.col-md-2.col-sm-3.col-xs-4
+  .thm-footer-2
+    #nav_menu-3.widget.widget_nav_menu
+      = link_to category.slug_path do
+        %h3.widget_title
+          = category.name
+      - if category.children.present?
+        .menu-footer-2a-container
+          %ul#menu-footer-2a.menu
+            = render partial: 'layouts/partials/footer_menu/nested_item_menu', collection: category.children.decorate, as: :category

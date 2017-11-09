@@ -1,0 +1,35 @@
+- if tournaments.present?
+  .themeum-club-ranking
+    #club-ranking.carousel.slide{data: {ride: :carousel, interval: :false}}
+      .themeum-title.themeum-title-black
+        .themeum-title-icon
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %h2
+          %span
+            %strong
+              = 'Результаты'
+        .recent-result-control
+          = link_to '#club-ranking', role: :button, data: {slide: :prev,  turbolinks: false} do
+            %i.fa.fa-angle-left
+          = link_to '#club-ranking', role: :button, data: {slide: :next,  turbolinks: false} do
+            %i.fa.fa-angle-right
+      .themeum-recent-result-inner
+        .carousel-inner{role: :listbox}
+          - tournaments.each_with_index do |tournament, index|
+            .item{class: index == 1 ? :active : nil }
+              = link_to tournament.slug_path, class: :clubnames do
+                %span
+                  = tournament.title
+              .clubnames.clearfix
+                %span.text-left
+                  = ' команды'
+                %span.pull-right{style: 'margin: 0 15px 0px 10px;'}
+                  = 'О'
+                %span.pull-right
+                  = 'И'
+              %ul.club-ranking-inner
+                = render partial: 'home/tournaments/club_ranking', collection: tournament.results.order('results.place ASC').decorate, as: :result
+:javascript
+  jQuery(document).ready(function() { jQuery('#club-ranking').carousel() });

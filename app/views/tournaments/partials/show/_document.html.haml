@@ -1,0 +1,9 @@
+%tr
+  %td
+    %i.fa.fa-file-text.ibox-content
+    = document.file.original_filename
+  %td
+    = link_to file_show_path(document.id), class: %i(btn btn-primary), data: {turbolinks: false} do
+      = 'Посмотреть'
+    = link_to download_path(document.id), class: %i(btn btn-default), data: {turbolinks: false} do
+      = 'Скачать'

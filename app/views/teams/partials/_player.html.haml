@@ -1,0 +1,12 @@
+.row
+  .col-sm-8.no-col
+    .media
+      .pull-left
+        = image_tag player.photo, alt: player.username, width: '40'
+      .media-body
+        %h3.club-team-title
+          = link_to "#{player_counter.next}. #{player.real_name}", player.slug_path
+  / col-sm-8
+  .col-sm-4.text-right.no-col
+    %h4
+      = player.position

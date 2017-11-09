@@ -1,0 +1,13 @@
+%thead.point-table-head
+  %tr
+    %th.text-left No
+    %th.text-left Команды
+    %th И
+    %th В
+    %th Н
+    %th П
+    %th ЗМ
+    %th ПМ
+    %th О
+  %tbody
+    = render partial: 'tournaments/partials/show/team_position', collection: ResultDecorator.decorate_collection(results), as: :result

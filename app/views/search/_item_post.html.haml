@@ -1,0 +1,11 @@
+.media
+  .entry-summary.clearfix
+  .pull-left
+    = link_to item.slug_path do
+      = image_tag item.main_image, class: %i(img-responsive wp-post-image), alt: item.title, height: 250, width: 175
+  .media-body
+    = link_to item.slug_path do
+      %h3
+        = item.title
+      %p
+        = truncate strip_tags(item.description), length: 150

@@ -1,0 +1,21 @@
+%ul.nav.nav-tabs.match-details-tab-nav{role: :tablist}
+  - if tournament.description.present? || tournamnet.images.present?
+    %li.active{role: :presentation}
+      = link_to 'Основное', '#fixtures', 'aria-controls': :fixtures, 'aria-expanded': false, data: {toggle: :tab}, role: :tab
+  - if tournament.documents.present? || tournament.regulations.present?
+    %li{role: :presentation}
+      = link_to 'Регламент', '#documents', 'aria-controls': :documents, 'aria-expanded': true, data: {toggle: :tab}, role: :tab
+  - if tournament.statistics.present?
+    %li{role: :statistic}
+      = link_to 'Статистика', '#statistic', 'aria-controls': :statistic, 'aria-expanded': :true, data: {toggle: :tab}, role: :tab
+  - if tournament.results.present?
+    %li{role: :standings}
+      = link_to 'Таблица результатов', '#standings', 'aria-controls': :standings, 'aria-expanded': false, data: {toggle: :tab}, role: :tab
+  - if tournament.teams.present?
+    %li{role: :presentation}
+      = link_to 'Команды', '#teams', 'aria-controls': :teams, 'aria-expanded': :true, data: {toggle: :tab}, role: :tab
+  - if tournament.rounds.present?
+    %li{role: :calendar}
+      = link_to 'Календарь', '#calendar', 'aria-controls': :calendar, 'aria-expanded': :true, data: {toggle: :tab}, role: :tab
+  %li{role: :comments}
+    = link_to 'Комментарии', '#comments_list', 'aria-controls': :comments, 'aria-expanded': :true, data: {toggle: :tab}, role: :tab

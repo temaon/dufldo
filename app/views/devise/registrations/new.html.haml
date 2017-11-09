@@ -1,0 +1,35 @@
+.sub-title{style: "background-image:url(#{image_path('banner3.jpg')}); background-size: cover; background-position: 50% 50%; padding: 110px 0 50px;"}
+  .container
+    .sub-title-inner
+      %h2
+        = 'Регистрация'
+.container
+  #content.site-content{role: :main}
+    #post-4.col-md-12.post-4.page.type-page.status-publish.hentry
+      .entry-content.row
+        .col-md-12
+          .col-sm-4.col-sm-offset-4.text-center#sign-form
+            = form_for(resource, as: resource_name, url: frontend_user_registration_path) do |f|
+              = devise_error_messages!
+              = link_to '/' do
+                .themeum-reg
+                  = image_tag 'logo.png', class: %i(img-responsive center-image), width: '180'
+              .form-group
+                = f.email_field :email, autofocus: true, class: %i(required form-control), autocomplete: :off, placeholder: 'Email *'
+              .form-group
+                = f.text_field :username, class: %i(required form-control), autocomplete: true, placeholder: 'Имя пользователя *'
+              .form-group
+                = f.password_field :password, autocomplete: :off, class: %i(required form-control), placeholder: 'Пароль *'
+              .form-group
+                = f.password_field :password_confirmation, autocomplete: :off, class: %i(required form-control), placeholder: 'Повторите пароль *'
+              .form-group
+                - if devise_mapping.rememberable?
+                  .field
+                    = f.check_box :remember_me
+                    = f.label :remember_me, 'Запомнить меня'
+              .form-group
+                = f.submit 'Готово', class: %i('btn btn-success btn-lg btn-block themeum-register')
+              .form-group
+                = link_to new_frontend_user_session_path, class: %i(lead text-muted) do
+                  %mark.lead.text-muted.small
+                    = 'Вход'

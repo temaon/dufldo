@@ -1,0 +1,91 @@
+= javascript_include_tag 'lib/gmap'
+.row
+  .col-sm-12.col-lg-12
+    .panel
+      .panel-heading#title
+        %h3
+          %i.icon-map-marker.main-color
+          Мы находимся
+      .panel-body
+        / gMap script container !Do not remove!!
+        #map{:style => "position: relative; overflow: hidden;height:300px"}
+  / gMap script container !Do not remove!!
+  %hr/
+  .row
+    .col-sm-4.col-lg-4
+      .panel
+        .panel-heading
+          %h3
+            %i.icon-pushpin.main-color
+            Our office
+        .panel-body
+          %address
+            %strong VERSO, Inc.
+            %br/
+            795 Folsom Ave, Suite 600
+            %br/
+            San Francisco, CA 94107
+            %br/
+            %i.icon-phone-sign
+            + 4 (123) 456-7890
+      .panel
+        .panel-heading
+          %h3
+            %i.icon-time.main-color
+            Business hours
+        .panel-body
+          %table.table.table-hover
+            %thead
+              %tr
+                %th Day
+                %th Time
+            %tbody
+              %tr.success
+                %td Monday
+                %td 9:00 to 18:00
+              %tr.success
+                %td Tuesday
+                %td 9:00 to 18:00
+              %tr.success
+                %td Wednesday
+                %td 9:00 to 18:00
+              %tr.success
+                %td Thursday
+                %td 9:00 to 18:00
+              %tr.success
+                %td Friday
+                %td 9:00 to 18:00
+              %tr.warning
+                %td Saturday
+                %td 9:00 to 14:00
+              %tr.danger
+                %td Sunday
+                %td day off
+    .col-12.col-lg-8
+      .panel
+        .panel-heading
+          %h3
+            %i.icon-envelope.main-color
+            Feel free to contact us
+        .panel-body
+          / CONTACT FORM https://github.com/jonmbake/bootstrap3-contact-form
+          %form#feedbackForm{:role => "form"}
+            .form-group
+              %input#name.form-control{:name => "name", :placeholder => "Name", :type => "text"}/
+              %span.help-block{:style => "display: none;"} Please enter your name.
+            .form-group
+              %input#email.form-control{:name => "email", :placeholder => "Email Address", :type => "email"}/
+              %span.help-block{:style => "display: none;"} Please enter a valid e-mail address.
+            .form-group
+              %textarea#message.form-control{:cols => "100", :name => "message", :placeholder => "Message", :rows => "10"}
+              %span.help-block{:style => "display: none;"} Please enter a message.
+            -#%img#captcha{:alt => "CAPTCHA Image", :src => "library/vender/securimage/securimage_show.php"}/
+            -#%a.btn.btn-info.btn-sm{:href => "#", :onclick => "document.getElementById('captcha').src = 'library/vender/securimage/securimage_show.php?' + Math.random(); return false"} Show a Different Image
+            %br/
+            .form-group{:style => "margin-top: 10px;"}
+              %input#captcha_code.form-control{:name => "captcha_code", :placeholder => "For security, please enter the code displayed in the box.", :type => "text"}/
+              %span.help-block{:style => "display: none;"} Please enter the code displayed within the image.
+            %span.help-block{:style => "display: none;"} Please enter a the security code.
+            %button#feedbackSubmit.btn.btn-primary.btn-lg{:style => "display: block; margin-top: 10px;", :type => "submit"} Send Feedback
+  / END CONTACT FORM
+  %hr/

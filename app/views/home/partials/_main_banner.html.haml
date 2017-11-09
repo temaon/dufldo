@@ -1,0 +1,19 @@
+.wpb_wrapper
+  - if banner.present?
+    .themeum-latest-match{style: "background-image: url(#{banner.main_image});background-repeat:no-repeat;background-size:cover;"}
+      = link_to banner.url.to_s do
+        .container.row-padding-v-115
+          .row
+            .col-sm-7
+              - if banner.name.present?
+                %h2{style: 'font-size:72px;margin:0;color:#ffffff;'}
+                  = banner.name
+              - if banner.try(:formatted_date).present?
+                #home-countdown-timer
+              #clearfix
+              != banner.description if banner.description.present?
+  - if banner.try(:formatted_date).present?
+    :coffeescript
+      $ ->
+        $('#home-countdown-timer').countdown "#{banner.formatted_date.to_s}", (event) ->
+          $(@).html(event.strftime('<div class="countdown-section  next-match-count"><span class="countdown-amount next-match-text">Осталось: </span></div><div class="countdown-section"><span class="countdown-amount">%-D </span><span class="countdown-period">%!D:Day,Дней;</span></div><div class="countdown-section"><span class="countdown-amount">%-H </span><span class="countdown-period">%!H:Hour,Часов;</span></div><div class="countdown-section"><span class="countdown-amount">%-M </span><span class="countdown-period">%!M:Minute,Минут;</span></div><div class="countdown-section"><span class="countdown-amount">%-S </span><span class="countdown-period">%!S:Second,Секунд;</span></div>'));

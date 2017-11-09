@@ -1,0 +1,11 @@
+.themeum-title
+  .themeum-title-icon
+    %span.icon-bar
+    %span.icon-bar
+    %span.icon-bar
+  %h2.widget_title
+    %span Топ
+    %strong Новости
+#themeum_popular_posts_widget-3.widget.widget_themeum_popular_posts_widget
+  .widget-popular-news
+    = render partial: 'news/partials/news', collection: news, as: :item
